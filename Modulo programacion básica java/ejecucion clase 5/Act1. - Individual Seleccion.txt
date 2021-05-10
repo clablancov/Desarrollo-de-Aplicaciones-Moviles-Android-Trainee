@@ -1,0 +1,93 @@
+//Determinar si un numero es par o impar
+Variables:
+- Int numero
+- Int valida
+
+Proceso:
+Escribir ("ingrese numero")
+Leer numero
+
+valida = numero % 2
+Si (valida == 0){
+	Escribir ("numero es par")
+}
+Sino {
+	Escribir ("numero es impar")
+}
+
+//Determinar si un numero es multiplo de 2
+
+Variables:
+- Int numero
+- Int valida
+
+Proceso:
+Escribir ("ingrese numero")
+Leer numero
+
+valida = numero % 2
+Si (valida == 0){
+	Escribir ("numero es multiplo de 2")
+}
+Sino {
+	Escribir ("numero NO es multiplo de 2")
+}
+
+//Determinar si numero es multiplo de 3
+Variables:
+- Int numero
+- Int valida
+
+Proceso:
+Escribir ("ingrese numero")
+Leer numero
+
+valida = numero % 3
+Si (valida == 0){
+	Escribir ("numero es multiplo de 3")
+}
+Sino {
+	Escribir ("numero NO es multiplo de 3")
+}
+
+//Determinar cual es el mayor de dos numeros
+Variables
+-Int num1
+-Int num2
+
+Proceso:
+Escribir ("ingrese primer numero")
+Leer num1
+Escribir ("ingrese segundo numero")
+Leer num2
+
+SI (num1 > num2) {
+	Escribir ("El numero " . num1 . "es mayor que " . num2)
+}
+SINO SI (num1 < num2){
+	Escribir ("El numero " . num2 . "es mayor que " . num1)
+}
+SINO {
+	Escribir ("Los numeros son iguales ")
+}
+
+//Determinar cual es el mayor de dos numeros
+Variables
+-Int num1
+-Int num2
+
+Proceso:
+Escribir ("ingrese primer numero")
+Leer num1
+Escribir ("ingrese segundo numero")
+Leer num2
+
+SI (num1 > num2) {
+	Escribir ("El numero " . num2 . "es menor que " . num1)
+}
+SINO SI (num1 < num2){
+	Escribir ("El numero " . num1 . "es menor que " . num2)
+}
+SINO {
+	Escribir ("Los numeros son iguales ")
+}

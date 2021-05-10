@@ -1,0 +1,50 @@
+=====================================================================================================================
+Organizar link de clases online
+ Str Link
+Str password
+Str Asignatura
+Str Día
+Str Hora
+Short recordatorio en min
+Str comentario
+ 
+ 
+ Proceso 1 llenado de datos
+Seleccionar día
+Seleccionar hora
+Ingresar link
+Ingresar asignatura
+Ingresar password
+Fijar recordatorio en min
+Ingresar comentario
+ 
+Segundo proceso acceso a los datos
+Organiza los datos según día y hora
+Suena recordatorio
+pinchar el link recordado
+Disfrutamos de nuestra clase
+ 
+ 
+obtener el consumo total eléctrico de locales comerciales
+Str nombre local
+Int lectura mes anterior
+Int lectura mes actual
+Float Cargo fijo
+Float cargo por energia
+Int diferencia
+Float consumo
+Float consumo total
+Int sobreconsumo
+ 
+ 
+ Ingrese nombre local
+Ingresa lectura mes anterior
+Ingresa lectura mes actual
+Diferencia = lectura actual – lectura anterior
+Consumo = a diferencia * cargo por energía
+Consumo Total = consumo +cargo fijo
+Imprimir en pantalla: “el consumo total de “ +nombre local+”es igual a”+ consumo total
+Si consumo total es > sobreconsumo
+Imprimir en pantalla: “estay gastando mucho”
+
+

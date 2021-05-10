@@ -1,0 +1,21 @@
+Compra en tienda virtual:
+Entradas:
+- Producto (variable del tipo string)
+- Valor Producto (variable del tipo int)
+- Usuario (variable del tipo booleano)
+- rut usuario (variable del tipo int)
+- nombre (variable del tipo string)
+- direccion (variable del tipo string)
+- Medio de Pago (variable del tipo int) (1=tarjeta de credito, 2=tarjeta de debito, 3=giftcard)
+
+Proceso:
+- Seleccionar producto
+- Definir cantidad
+- ingresar login usuario o comprar como invitado
+- definir entrega (Envio, retiro en tienda)
+- Elegir metodo de pago
+- Pagar producto
+- Confirmar pago
+
+Salida:
+- Producto comprado/ entregado

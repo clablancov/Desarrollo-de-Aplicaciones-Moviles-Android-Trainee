@@ -1,0 +1,40 @@
+// SUmar los numeros del 1 al 100
+Variables:
+- Int suma = 0
+- int contador = 1
+
+Mientras (contador <= 100){
+	Suma = suma + contador
+}
+Escribir ("La suma de los numeros del 1 al 100 es ". suma)
+
+//Calcular la suma de los numeros que sean multiplos de 9 entre 1 y 100
+Variables:
+- int suma = 0
+- int valida
+
+Para (i=1; i<=100; i++){
+	valida = i % 9
+	SI (valida == 0){
+		suma = suma + i
+	}
+}
+Escribir ("la suma de los multiplos de 9 es " . suma)
+
+//Sumar la N cantidad de numeros ingresados por el usuario
+Variables:
+- int suma = 0
+- int numero
+- int contador = 0
+
+Escribir ("Cuantos numeros desea sumar")
+Leer contador
+
+Hacer{
+Escribir ("ingrese numero")
+	Leer numero
+	Suma = suma + numero
+	contador--
+}Mientras (contador >=1)
+
+Escribir("la suma de los numeros es " . suma)

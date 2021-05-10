@@ -1,0 +1,36 @@
+=======
+Variables
+int A = 2
+int B = 3
+int aux_A
+int aux_B
+
+//Mostramos los valores iniciales de A y B
+Escribir ("el valor de A es" . A)
+Escribir ("el valor de B es" . B)
+
+//Guardamos las variables en los auxiliares
+aux_A = B
+aux_B = A
+
+//Ahora procedemos a cambiar los valores
+A = aux_A
+B = aux_B
+Escribir ("Caaaaaaaaaambio!")
+Escribir ("el valor de A es" . A)
+Escribir ("el valor de B es" . B)
+=======
+sIN VARIABLES AUX
+int A = 2
+int B = 3
+
+//Sumamos los valores y lo asignamos a A (2+3)
+A = A+B
+//Restamos el valor de A-B (5-3)
+B= A-B
+//Asignamos A con la reesta de A-B (5-2)
+A= A-B
+
+Escribir ("Caaaaaaaaaambio!")
+Escribir ("el valor de A es" . A)
+Escribir ("el valor de B es" . B)

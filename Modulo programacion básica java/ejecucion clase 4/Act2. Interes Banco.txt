@@ -1,0 +1,15 @@
+======================================
+interes banco
+Variables
+Double inversion
+float ganancia = 0
+
+Constante
+float interes = 0.02
+
+Escribe ("Ingrese monto a invertir")
+Leer inversion
+
+ganancia = inversion * 0.02
+
+escribe ("su ganancia es".ganancia)

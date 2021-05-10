@@ -1,0 +1,162 @@
+ejercicio 1 
+algoritmo que determina si la suma de dos numeros ingresados es positiva negativa o cero
+
+Inicio 
+
+float num1
+float num2 
+float sum
+
+Escribe ("Ingrese 2 números para verificar si su suma es positivo negativo o cero")
+Escribe ("Ingrese su primer numero")
+leer num1
+Escribe ("Ingrese su segundo numero")
+leer num1
+
+sum = num1+num2
+
+Si (sum<0)
+   Escribe ("La suma de sus numeros es negativa")
+Sino 
+    Si (sum>0)
+      Escribe ("La suma de sus numeros es positiva")
+    Sino 
+      Si (sum==0)
+      Escribe ("La suma de sus numeros es 0)
+fin si 
+fin si
+fin si
+
+Fin
+
+____
+Ejercicio 2
+
+//Que indique si un numero es divisible por 2 y5 al mismo tiempo
+  Entrada: Un numero 
+Salida: Comprobación si el numero es divisible por 2 y5al mismo tiempo 
+Variables: 
+float NumeroPrueba  
+
+Inicio 
+Imprimir "escriba el número a comprobar" 
+Leer NumeroPrueba 
+Si (NumeroPrueba %2 ==0 && NumeroPrueba %5 ==0)
+         Imprimir "El número es  divisible por 2y 5 al mismo tiempo" 
+Sino
+         Imprimir "El número no es  divisible por 2y 5 al mismo tiempo"  
+Fin
+____
+
+Ejercicio3
+Algoritmo promedio 4 notas
+
+Definir nota1, nota2, nota3, nota4, promedio Como Real;
+Escribir "Ingrese la notra 1:" Sin Saltar;
+Leer nota1;  
+Escribir "Ingrese la notra 2:" Sin Saltar;
+Leer nota2;    
+Escribir "Ingrese la notra 3:" Sin Saltar;
+Leer nota3;    
+Escribir "Ingrese la notra 4:" Sin Saltar;
+Leer nota4;   
+promedio = (nota1 + nota2 + nota3 + nota4)/4;   
+Escribir "El promedio es ", promedio;    
+FinAlgoritmo
+
+=============================
+
+Ejercicio 4
+//
+Variables
+(int) num1
+(int) num2
+(int) num3
+Algoritmo
+Escribe ("Ingrese su primer numero")
+leer num1
+ 
+Escribe ("Ingrese su primer numero")
+leer num2
+ 
+Escribe ("Ingrese su primer numero")
+leer num3
+
+Si num1 == num2 y num1 == num3 
+Escribir “No hay número mayor”
+Si num1>num2 y num2>num3 
+Escribir “El número mayor es ”, num1
+Si num1 < num2 y num2 <num3
+Escribir “El número mayor es ”, num3
+Sino
+Escribir “El número mayor es ”, num2
+
+Fin//
+
+ejercicio 4
+Algoritmo Mayor3numeros
+
+Definir a,b,c Como Entero
+Escribir "Ingresa 3 números"
+leer a, b, c
+si a>b Entonces
+	si a>c Entonces
+		Escribir «El número ",a," es el mayor de los tres»
+	SiNo
+		Escribir «El número «,c,» es el mayor de los tres»
+	FinSi                    
+SiNo
+	si b>c Entonces
+		Escribir «El número «,b,» es el mayor de los tres»
+	SiNo
+		Escribir «El número «,c,» es el mayor de los tres»
+	FinSi
+FinSi     
+FinAlgoritmo
+
+=================
+Ejercicio 5
+Solicitar 2 numeros y un operador, hacer la operacion con los numeros ingresados
+
+Variables:
+- Int Numero1
+- Int Numero2
+- Float Resultado
+- Int Operacion
+- String Mensaje
+
+Escribir ("Ingrese el primer numero")
+Leer Numero1
+Escribir ("Ingresar el segundo numero")
+Leer Numero2
+Escribir ("Ingresar que operacion desea realizar? Ingrese numero correspondiente a operación (1=Suma,2=Resta,3=Multiplicacion,4=División,5=Modulo)")
+Leer Operacion
+
+Segun (operacion){
+        caso (operacion == 1) //SUMA
+                Resultado = Numero1 + Numero2
+                Mensaje = "La Suma de " . Numero1 . " + " . Numero2 . "es igual a " . Resultado
+                break;
+        caso (operacion == 2): //RESTA
+                Resultado = Numero1 - Numero2
+                Mensaje = "La Resta de " . Numero1 . " - " . Numero2 . "es igual a " . Resultado
+                break;
+        caso (operacion == 3): //MULTIPLICACION
+                Resultado = Numero1 * Numero2
+                Mensaje = "La Multiplicación de " . Numero1 . " * " . Numero2 . "es igual a " . Resultado
+                break;
+        caso (operacion == 4): //DIVISION
+                Resultado = Numero1 / Numero2
+                Mensaje = "La Division de " . Numero1 . " / " . Numero2 . "es igual a " . Resultado
+                break;
+        caso (operacion == 5): // MODULO
+                Resultado = Numero1 % Numero2
+                Mensaje = "El Modulo de " . Numero1 . " % " . Numero2 . "es igual a " . Resultado
+                break;
+        caso (Default):
+                Mensaje = "Debe ingresar un operador válido, verificar listado";
+                break;
+}
+
+Escribir (Mensaje)
+//FIN

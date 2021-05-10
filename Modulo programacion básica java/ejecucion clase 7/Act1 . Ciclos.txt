@@ -1,0 +1,219 @@
+//08-05-2021
+//Calcular N numeros (cantidad ingresada por usuario) que sean numeros primos.
+
+Variables:
+- Int cantidad
+- Int numero = 0
+- Int Numaux
+- Int calculo
+- Int i
+- int aux
+- Double acumulador = 1
+
+Proceso:
+Escribir ("Cuantos numeros desea calcular?")
+Leer cantidad
+
+Para (i = 1; i <= cantidad; i++){
+	Escribir ("Ingrese " . i . "Numero")
+	Leer (numero)
+	numaux = 2
+	Si (numero > 1) {
+		Mientras (Numaux < numero){
+			calculo = numero % numaux
+			Si (calculo == 0){
+				Numaux = numero
+				aux = 1
+			}
+			Fin Si
+			Si (aux == 1 && numero > 2){
+				Escribir ("El numero " . numero . "no es primo!")
+			}
+			Sino {
+				Escribir ("El numero " . numero . "es primo")
+				acumulador = acumulador * numero
+			}
+			Fin Si
+			aux = 0
+			Numaux++
+		}Fin Mientras
+	}
+	Sino {
+		Escribir ("El numero 1 no es primo, favor ingresar otro numero")
+	}
+}Fin Para
+
+Escribir ("La multiplicación de los numeros primos ingresados es " . acumulador)
+
+
+// Sumar los numeros pares ingresados por el usuario, ingresando el usuario la cantidad de numeros
+
+Variables:
+- Int cantidad
+- int numero = 0
+- int acumulador = 0
+
+Proceso:
+Escribir ("Cuantos numeros desea calcular?")
+Leer cantidad
+
+Para (i = 1; i <= cantidad; i++){
+	Escribir ("Ingrese " . i . "Numero")
+	Leer (numero)
+	calculo = numero % 2
+	Si (calculo == 0){
+		acumulador = acumulador + numero
+	}
+	Sino{
+		Escribir ("Numero " . numero . "no es par")
+	}
+	Fin Si	
+}fin para
+Escribir ("La suma de numeros pares ingresados es ". acumulador)
+
+// Sumar los numeros pares ingresados por el usuario, ingresando el usuario la cantidad de numeros
+
+Variables:
+- Int cantidad
+- int numero = 0
+- int acumulador = 0
+
+Proceso:
+Escribir ("Cuantos numeros desea calcular?")
+Leer cantidad
+
+Para (i = 1; i <= cantidad; i++){
+	Escribir ("Ingrese " . i . "Numero")
+	Leer (numero)
+	calculo = numero % 2
+	Si (calculo == 0){
+		acumulador = acumulador + numero
+	}
+	Sino{
+		Escribir ("Numero " . numero . "no es par")
+	}
+	Fin Si	
+}fin para
+Escribir ("La suma de numeros pares ingresados es ". acumulador)
+
+// Determinar la cantidad de multiplos de 5 ingresados por el usuario
+
+Variables:
+- Int cantidad
+- int numero = 0
+- int contador = 0
+
+Proceso:
+Escribir ("Cuantos numeros desea calcular?")
+Leer cantidad
+
+Para (i = 1; i <= cantidad; i++){
+	Escribir ("Ingrese " . i . "Numero")
+	Leer (numero)
+	calculo = numero % 5
+	Si (calculo == 0){
+		contador++
+	}
+	Sino{
+		Escribir ("Numero " . numero . "no es multiplo de 5")
+	}
+	Fin Si	
+}fin para
+Escribir ("La cantidad de numeros multiplos de 5 ingresados es ". cantidad)
+
+//Sumar numeros pares e impares y contar cuantos son
+Variables:
+- Int cantidad
+- int numero = 0
+- int contadorPar = 0
+- int contadorimpar = 0
+- int acumuladorpar = 0
+- int acumuladorimpar = 0
+
+Proceso:
+Escribir ("Cuantos numeros desea calcular?")
+Leer cantidad
+
+Para (i = 1; i <= cantidad; i++){
+	Escribir ("Ingrese " . i . "Numero")
+	Leer (numero)
+	calculo = numero % 2
+	Si (calculo == 0){
+		acumuladorpar = acumuladorpar + numero
+		cantidadpar++
+	}
+	Sino{
+		acumuladorimpar = acumuladorimpar + numero
+		cantidadimpar++
+	}
+	Fin Si	
+}fin para
+Escribir ("La cantidad de numeros par ingresados es ". contadorpar . "y la suma es " . acumuladorpar)
+Escribir ("La cantidad de numeros par ingresados es ". contadorimpar . "y la suma es " . acumuladorimpar)
+
+//Sumar numeros pares y multiplicar impares, contar cuantos son y mostrar cuales fueron mas, pares  o impares
+Variables:
+- Int cantidad
+- int numero = 0
+- int contadorPar = 0
+- int contadorimpar = 0
+- int acumuladorpar = 0
+- int acumuladorimpar = 1
+
+Proceso:
+Escribir ("Cuantos numeros desea calcular?")
+Leer cantidad
+
+Para (i = 1; i <= cantidad; i++){
+	Escribir ("Ingrese " . i . "Numero")
+	Leer (numero)
+	calculo = numero % 2
+	Si (calculo == 0){
+		acumuladorpar = acumuladorpar + numero
+		cantidadpar++
+	}
+	Sino{
+		acumuladorimpar = acumuladorimpar * numero
+		cantidadimpar++
+	}
+	Fin Si	
+}fin para
+Si (contadorpar > contadorimpar){
+	Escribir("Se ingresaron mas numeros pares")
+}
+Sino SI (contadorpar < contadorimpar){
+	Escribir("Se ingresaron mas numeros impares")
+}
+Sino{
+	Escribir("Se ingresaron igual cantidad de pares e impares")
+}
+Escribir ("La cantidad de numeros par ingresados es ". contadorpar . "y la suma es " . acumuladorpar)
+Escribir ("La cantidad de numeros par ingresados es ". contadorimpar . "y la suma es " . acumuladorimpar)
+
+//Calcular el ingreso de N notas, y determinar si aprueba o no
+Variables:
+- float nota
+- float sumanota = 0
+- int contnota = 0
+- float promedio = 0
+- int aux = 1
+
+Proceso:
+Hacer{
+	Escribir ("ingrese nota")
+	Leer nota
+
+	Sumanota = sumanota + nota
+	contnota++
+
+	Escribir ("desea ingresar otra nota? (Si: 1 , No:2")
+	Leer aux
+}Mientras(aux != 1)
+promedio = sumanota / contnota
+
+Si (promedio >= 3.95){
+	Escribir("El promedio de notas es " . promedio . "por lo cual es aprobado")
+}
+Sino {
+	Escribir("El promedio de notas es " . promedio . "por lo cual es reprobado")
+}

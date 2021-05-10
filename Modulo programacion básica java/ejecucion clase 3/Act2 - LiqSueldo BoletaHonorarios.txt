@@ -1,0 +1,80 @@
+==================================================================
+
+Liquidacion de sueldo
+
+Str nombre
+Str apellido
+Str rut
+Str cargo
+Str departamento
+Str fecha de contrato
+Int Sueldo bruto
+Str sistema de salud
+Int valor descuento afp
+Str tipo de contrato
+short cargas familiares
+int valor carga familiares
+Int descuento
+Int seguro de cesantía
+Int seguro complementarios
+Int bonificaciones
+Int gratificaciones
+Short horas extras
+Int Valor hora extra
+Int movilización
+Int alimentación
+Int zona
+Int Sueldo Liquido
+Str Datos de la empresa
+
+Datos de la empresa
+Ingresar nombre
+Ingresar nombre
+Ingresar Rut
+Ingresar Cargo
+Ingresar Departamento
+Ingresar días trabajados
+Ingresar fecha de contrato
+Ingresar fecha de liquidación
+Ingresar el sueldo Bruto
+Sumar bonificaciones
+Sumar (valor carga familiar x Cargas
+familiares)
+Sumar (valor horas extras x horas extras)
+Sumar gratificaciones
+Sumar Alimentos
+Sumar zona
+Sumar movilización
+Elegir Sistema de Salud
+Si Elige Fonasa descontar 7%
+Si no descontar valor contratado con la
+Isapre
+Descontar valor descuento afp
+Descontar seguro cesantía
+Descontar otros descuentos
+Descontar seguros complementarios
+Sueldo Liquido
+
+Boleta de Honorarios:
+
+Entradas:
+- Run cliente (Variable Str)
+- Nombre Cliente (variable STR)
+- Correo electrónico(variable Str)
+- fecha (variable STR)
+- metodo pago (variable Str)
+- descripción (variable STR)
+- Total Honorarios (variable INT)
+- Porcentaje Descto (Constante float) (0.115) (11.5%)
+- valor Dscto Honorario (variable int)
+- Total (variable Int)
+
+Proceso:
+- Ingresar datos del cliente
+- ingresar descripcion
+- Ingresar valor neto
+- Calcular valor Dscto Honorario con Total Honorarios multiplicando Porcentaje Descto
+- Calcular valor bruto sumando valor Dscto Honorario + Total Honorarios
+
+Salida:
+- Boleta Emitida

@@ -1,0 +1,55 @@
+=========================================
+_Modelo y Marca_
+
+String Modelo
+String Marca
+
+Imprimir: "Ingrese el modelo de su vehículo"
+Leer Modelo
+Imprimir: Ingrese la marca de su vehículo"
+Leer Marca
+Imprimir: "El modelo de su vehículo es: "+Modelo+" y su marca es: "+Marca;
+
+_PORCENTAJE SOLICITADO_
+
+Float Numero
+Float Porcentaje
+Float Resultado
+
+Imprimir: "Ingrese numero a calcular"
+Leer Numero
+Imprimir: Ingrese porcentaje a calcular"
+Leer Porcentaje
+Resultado=(Numero*Porcentaje)/100
+Imprimir: "El resultado de su operación es: "+Resultado;
+
+
+Comision Ventas
+Variables
+Int Sueldo Base
+Int Venta1
+Int Venta2
+Int Venta3
+Int SumaVentas
+Int ComisionVenta
+Int SueldoVentas
+
+Constante
+float comision = 0.1
+
+Escribir ("ingrese sueldo base")
+Leer SueldoBase
+Escribir("Ingrese Venta 1")
+Leer Venta 1
+Escribir("Ingrese Venta 2")
+Leer Venta 2
+Escribir("Ingrese Venta 3")
+Leer Venta 3
+
+//Calcular comision de ventas
+SumaVentas = Venta1 + Venta2 + Venta3
+ComisionVenta = SumaVentas * comision
+SueldoVentas = SueldoBase + ComisionVentas
+
+Escribir("Su comision por las ventas ingresadas es" . ComisionVenta)
+Escribir("Su sueldo quedaria en " . SueldoVentas)

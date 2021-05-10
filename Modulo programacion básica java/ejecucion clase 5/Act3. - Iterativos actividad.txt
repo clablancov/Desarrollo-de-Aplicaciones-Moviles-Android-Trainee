@@ -1,0 +1,83 @@
+//Mostrar numeros del 1 al 100 y del 100 al 1
+Variables
+int i
+
+Proceso
+Para (i=1; i<=100; i++) {
+	Escribir ("Numero " . i)
+}
+Para (i=100; i>=1; i--){
+	Escribir ("Numero " . i)
+}
+
+//Sumar todos los numeros pares de los numeros ingresados por el usuario, la cant la define el usuario
+Variables:
+- int numero
+- int cantidad
+- int verifica
+- int suma
+
+Proceso:
+Escribir ("Cuantos numeros ingresara?")
+Leer cantidad
+
+Para (i=0; i <= cantidad; i++){
+	Escribir("ingrese numero")
+	Leer numero
+	verifica = numero % 2
+	SI (verifica == 0){
+		suma = suma + numero
+	}
+}
+Escribir ("La suma de numeros pares ingresados es: " . suma)
+
+//contar los numeros multiplos de 5 ingresados por el usuario
+Variables:
+- int numero
+- int cantidad
+- int verifica
+- int contador = 0
+
+Proceso:
+Escribir ("Cuantos numeros ingresara?")
+Leer cantidad
+
+Para (i=0; i <= cantidad; i++){
+	Escribir("ingrese numero")
+	Leer numero
+	verifica = numero % 5
+	SI (verifica == 0){
+		contador++
+	}
+}
+Escribir ("La cantidad de numeros multiplos de 5 ingresados es: " . contador)
+
+//Sumar los numeros pares e impares y contarlos
+Variables:
+- int numero
+- int cantidad
+- int verifica
+- int sumapar
+- int sumaimpar
+- int contpar = 0
+- int conimpar = 0
+
+Proceso:
+Escribir ("Cuantos numeros ingresara?")
+Leer cantidad
+
+Para (i=0; i <= cantidad; i++){
+	Escribir("ingrese numero")
+	Leer numero
+	verifica = numero % 2
+	SI (verifica == 0){
+		sumapar = sumapar + numero
+		contpar++
+	}
+	SINO {
+		sumaimpar = sumaimpar + numero
+		contimpar++
+	}
+}
+Escribir ("La cantidad de numeros pares ingresados es " . contpar . "y su suma es" . sumapar)
+Escribir ("La cantidad de numeros impares ingresados es " . contimpar . "y su suma es" . sumaimpar)

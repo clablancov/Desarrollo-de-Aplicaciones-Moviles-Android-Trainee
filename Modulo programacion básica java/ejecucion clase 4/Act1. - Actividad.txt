@@ -1,0 +1,32 @@
+Suma de 2 Numeros:
+Variables:
+int Numero1
+int Numero2
+int Total = 0
+
+Si numero1 > 0 && numero2 > 0 Entonces
+	Total = Numero1 + Numero2
+Fin Si
+
+Promedio de 3 notas
+Varialbes:
+int Nota1
+int Nota2
+int Nota3
+int SumaNotas
+float Promedio
+
+Constante
+CantNotas = 3;
+
+SumaNotas = nota1 + Nota2 + Nota3
+Promedio = Sumanotas / Cantnotas
+
+Cuadrado de un numero
+Variables
+int Numero
+int Cuadrado
+
+Si numero > 0 Entonces
+	Cuadrado = numero * numero
+Fin Si

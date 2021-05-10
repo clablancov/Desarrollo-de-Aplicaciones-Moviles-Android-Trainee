@@ -1,0 +1,16 @@
+Compra en tienda virtual:
+Entradas:
+- Productos
+- Medio de Pago
+
+Proceso:
+- Seleccionar producto
+- Definir cantidad
+- ingresar login usuario o comprar como invitado
+- definir entrega (Envio, retiro en tienda)
+- Elegir metodo de pago
+- Pagar producto
+- Confirmar pago
+
+Salida:
+- Producto comprado/ entregado

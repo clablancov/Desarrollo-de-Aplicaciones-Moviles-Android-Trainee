@@ -1,0 +1,47 @@
+cambiar rueda:
+Entradas:
+- Rueda Buena
+- Gata
+- Llave Cruz
+
+Proceso:
+- Soltar tuercas con llave cruz
+- Levantar auto con gata
+- Quitar Tuercas
+- Quitar Rueda Pinchada
+- Colocar Rueda Buena
+- Colocar tuercas en orden de cruz y apretar
+- Bajar Auto y sacar gata.
+- reapretar tuercas.
+Salida:
+- Rueda reparada.
+
+
+Cambiar Pañal:
+Entradas
+- Pañal Limpio
+- Toallas húmedas
+- Crema anticoceduras
+Proceso
+- Acostar Bebe
+- Quitar Pañal Sucio
+- Limpiar todo con toallas humedas
+- aplicar crema anticoceduras
+- colocar pañal limpio
+
+Salida
+- bebe feliz
+
+Cambiar Clave Correo:
+Entradas:
+- direccion de correo
+- clave antigua
+- clave nueva
+Proceso:
+- ingresar dirección de correo electronico.
+- ingresar clave antigua
+- ingresar clave nueva
+- reingresar clave nueva
+
+Salida:
+- Clave actualizada correctamente
