@@ -1,0 +1,16 @@
+//lapices al por mayor
+int cantidad = 0
+total = 0
+
+
+Escrbir ("Ingresar cantidad de lapices")
+Leer cantidad
+
+SI (cantidad >= 1000){
+	total = cantidad * 85
+}
+SINO {
+	total = cantidad * 90
+}
+
+Escribir ("El valor por " . cantidad . " lapices es de $" . total)

@@ -1,0 +1,16 @@
+//calcular presupuesto segun cantidad de personas
+
+Escribir("Ingrese la cantidad de personas")
+Leer cantidad
+
+SI (cantidad <=200){
+	presupuesto = cantidad * 9500
+}
+SINO SI (cantidad > 200 && cantidad <=300){
+	presupuesto = cantidad *8500
+}
+SINO {
+	presupuesto = cantidad * 7500
+}
+
+Escribir ("el presupuesto para " . cantidad . " personas es $" . presupuesto)

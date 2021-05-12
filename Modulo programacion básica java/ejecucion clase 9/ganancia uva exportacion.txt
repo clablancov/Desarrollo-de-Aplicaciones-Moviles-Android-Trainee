@@ -1,0 +1,43 @@
+// calculadora de ganancia uva exportada
+flag = 1
+float kilos
+int tipo
+int tamaño
+float ganancia = 0
+float perdida = 0
+float total
+
+
+hacer{
+	Escribir ("Ingrese kilos de uva a exportar")
+	Leer kilos
+
+	Escribir ("Ingrese Tipo de Uva (1= Tipo A, 2 = Tipo B)")
+	Leer tipo
+
+	Escribir ("Ingrese tamaño de uva (1=tamaño 1, 2=tamaño 2)")
+	Leer tamaño
+	SI (tipo == 1){
+		SI (tamaño == 1){
+			ganancia = kilos * 20
+		}
+		SINO SI (tamaño == 2){
+			ganancia = kilos * 30
+		}
+	}
+	SI (tipo == 2){
+		SI (tamaño == 1){
+			perdida = kilos * 30
+		}
+		SINO SI (tamaño == 2){
+			perdida = kilos * 50
+		}
+	}
+	
+	Escribir ("Desea calcular otro tipo / tamaño de uva? (Si = 1, NO = 2)")
+	Leer flag
+} mientras (flag == 1)
+
+total = ganancia - perdida
+
+Escribir ("Su ganancia/perdida es de $" . total)

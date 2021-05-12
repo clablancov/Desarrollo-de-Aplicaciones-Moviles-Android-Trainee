@@ -1,0 +1,20 @@
+//Determinar porcentaje dependiendo del valor del producto almacen
+int valorProducto
+int dscto
+int totaldscto
+
+
+
+Escribir ("ingrese valor producto")
+Leer valorProducto
+
+SI(valorProducto > 250000){
+	dscto = valorProducto * 0.15
+}
+SINO {
+	dscto = valorProducto * 0.08
+}
+
+totaldscto = valorProducto - dscto
+
+Escribir("El valor del producto con descuento es $" . totaldscto)

@@ -1,0 +1,11 @@
+//Conversor de metros a pulgadas para modista
+metros = 0
+pulgadas
+
+
+Escribir("Ingresar los metros a transformar")
+Leer metros
+
+pulgadas = metros / 0.0254
+
+Escribir (metros" metros equivale a " . pulgadas . "pulgadas")

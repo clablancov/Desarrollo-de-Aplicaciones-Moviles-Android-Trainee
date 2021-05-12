@@ -1,0 +1,45 @@
+//cobro llamadas chismefon
+int minutos
+int dia
+int costollamada
+int impuesto
+int costototal
+
+Escribir("cantidad de minutos hablados")
+leer minutos
+
+Escribir("Dia Habil o Domingo? [1= HabilAM, 2=HabilPM, 3=Domingo]")
+Leer dia
+
+Si (minutos < 5){
+	costollamada = 100 * minutos
+}
+SINO SI (minutos >=5 && minutos < 8){
+	costollamada = 5 * 100
+	costollamada = costollamada + ((minutos - 5) * 80)
+}
+SINO SI (minutos >=8 && minutos < 10){
+	costollamada = 5 * 100
+	costollamada = costollamada + (3 * 80)
+	costollamada = costollamada + ((minutos - 8) * 70)
+}
+SINO SI (minutos >= 10){
+	costollamada = 5 * 100
+	costollamada = costollamada + (3 * 80)
+	costollamada = costollamada + (2 * 70)
+	costollamada = costollamada + ((minutos - 10) * 50)
+}
+
+SI (dia == 1){
+	impuesto = costollamada * 0.15
+}
+SINO SI (dia == 2){
+	impuesto = costollamada * 0.1
+}
+SINO SI (dia == 3){
+	impuesto = costollamada * 0.03
+}
+
+costototal = costollamada + impuesto
+
+Escribir("El costo de la llamada es de " . costototal)

@@ -1,0 +1,86 @@
+//determinar el mayor de n numeros ingresados por usuario
+
+Escribir("Escribir el numero mayor de los numeros ingresados")
+flag = 1
+numero
+numeroMayor
+
+//Se define el primer numero como mayor, para futuras comparaciones
+Escribir ("ingrese Numero")
+leer numeroMayor
+
+hacer {
+	Escribir("Ingrese siguiente Numero")
+	Leer numero
+	
+	Si(numero > numeroMayor){
+		numeroMayor = numero
+	}
+	
+	Escribir("desea ingresar otro numero? (Si=1, No=2")
+	Leer flag
+} mientras (flag == 1)
+
+Escribir("el numero mayor ingresado es: " . numeroMayor)
+
+//determinar el menor de n numeros ingresados por usuario
+
+Escribir("Escribir el numero mayor de los numeros ingresados")
+flag = 1
+numero
+numeroMayor
+
+//Se define el primer numero como menor, para futuras comparaciones
+Escribir ("ingrese Numero")
+leer numeroMenor
+
+hacer {
+	Escribir("Ingrese siguiente Numero")
+	Leer numero
+	
+	Si(numero < numeroMenor){
+		numeroMenor = numero
+	}
+	
+	Escribir("desea ingresar otro numero? (Si=1, No=2")
+	Leer flag
+} mientras (flag == 1)
+
+Escribir("el numero menor ingresado es: " . numeroMenor)
+
+//Determinar el promedio de edades y mostrar el mayor y menor
+
+int cantidad
+int edadMayor
+int edadMenor
+int sumaEdad = 0
+float promedio = 0
+
+Escribir("cuantas edades ingresará?")
+Leer cantidad
+
+//Se define el primer numero como menor y mayor, para futuras comparaciones
+Escribir ("ingrese Numero")
+leer numero
+edadMayor = numero
+edadMenor = numero
+sumaEdad = numero
+
+Para(i=2; i <= cantidad; i++){
+	Escribir ("Ingrese siguiente numero")
+	Leer numero
+	Si (numero > edadMayor){
+		edadMayor = numero
+	}
+	Si (numero < edadMenor){
+		edadMenor = numero
+	}
+	
+	sumaEdad = sumaEdad + numero
+}
+
+promedio = sumaEdad / cantidad
+
+Escribir ("el promedio de edad es " . promedio)
+Escribir ("la menor edad es " . edadMenor)
+Escribir ("la mayor edad es " . edadMayor)

@@ -1,0 +1,27 @@
+//calculo viaje de estudios
+
+Escribir ("ingrese cantidad de alumnos a viajar");
+Leer alumnos
+
+Si(alumnos >= 100){
+	costoalumno = 6500
+	costoviaje = alumnos * costoalumno
+}
+SINO SI (alumnos >= 50 && alumnos <= 99){
+	costoalumno = 7000
+	costoviaje = alumnos * costoalumno
+}
+SINO SI (alumnos >= 30 && alumnos <= 49){
+	costoalumno = 9500
+	costoviaje = alumnos * costoalumno
+}
+SINO SI (alumnos < 30){
+	costoviaje = 400000
+	costoxalumno = costoviaje / alumnos
+}
+SINO {
+	costoviaje = 0
+	costoxalumno = 0
+}
+
+Escribir("El viaje tiene un costo por alumno de " . costoxalumno . " y un costo total de " . costoviaje)
