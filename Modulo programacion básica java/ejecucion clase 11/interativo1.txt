@@ -1,0 +1,9 @@
+int suma = 0
+
+Para (i=1; i<=10; i++){
+	Escribir("Ingrese numero")
+	leer numero
+	suma = suma + numero
+}
+
+Escribir("la suma es " . suma)

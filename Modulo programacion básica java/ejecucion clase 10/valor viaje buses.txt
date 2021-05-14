@@ -1,0 +1,42 @@
+//calculo de recorrido segun vehiculo
+flag = 0
+
+
+Escribir ("ingrese cantidad pasajeros")
+Leer pasajeros
+
+Escribir ("ingrese kilometros a recorrer")
+leer km
+
+Escribir("Que tipo de bus desea contratar A, B o C")
+Leer tipoBus
+
+hacer{
+	SI(tipoBus == A){
+	valor = 200
+	flag = 0
+	}
+	SINO SI(tipoBus == B){
+	valor = 250
+	flag = 0
+	}
+	SINO SI(tipoBus == C){
+	valor = 300
+	flag = 0
+	}
+	SINO {
+		Escribir("Que tipo de bus desea contratar A, B o C")
+		Leer tipoBus
+		flag = 1
+	}
+}mientras(flag == 1)
+
+
+SI (pasajeros > 20){
+	costo = pasajeros * (valor * km)
+}
+SINO {
+	costo = (valor * km) * 20
+}
+
+Escribir ("el valor del viaje para " . pasajeros . " pasajeros recorriendo " . km . " kms, en bus tipo " . tipoBus . " es de " . costo)

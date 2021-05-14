@@ -1,0 +1,15 @@
+//calculo de ahorros en 1 año
+int mes = 1
+int ahorro = 0
+int monto
+
+Mientras (mes <= 12){
+	Escribir ("ingresar monto a ahorrar para el mes " . mes)
+	leer monto
+	
+	ahorro = ahorro + monto
+	Escribir ("El monto ahorrado en el mes " . mes . " es de $" . ahorro)
+	mes++
+}
+
+Escribir (" el monto total ahorrado es de $" . ahorro)

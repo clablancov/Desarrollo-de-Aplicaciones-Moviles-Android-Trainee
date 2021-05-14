@@ -1,0 +1,25 @@
+// promedio edad alumnos
+int flag = 1
+int cont = 0
+int suma = 0
+hacer {
+	Escribir("ingrese edad del alumno")
+	Leer edad
+	
+	suma = suma + edad
+	cont ++
+	
+	Escribir("Desea ingresar otra edad? 1= SI, 2 = NO")
+	leer opt
+	
+	SI (opt == 1){
+		flag = 1
+	}
+	SINO {
+		flag = 0
+	}
+} mientras (flag == 1)
+
+Promedio = suma / cont
+
+escribir ("el promedio de edad es de " . promedio)

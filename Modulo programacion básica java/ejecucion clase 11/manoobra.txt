@@ -1,0 +1,55 @@
+// calcular costos de fabricas el cometa
+
+Escribir("Ingrese clave del producto")
+leer clave
+
+Escribir("Ingresar costo materia prima")
+leer materiaPrima
+
+hacer {
+	SI (clave == 1){
+		manoObra = materiaPrima * 0.8
+		gastoFabricacion = materiaPrima * 0.28
+		flag = 0
+	}
+	SINO SI (clave == 2){
+		manoObra = materiaPrima * 0.85
+		gastoFabricacion = materiaPrima * 0.3
+		flag = 0
+	}
+	SINO SI (clave == 3){
+		manoObra = materiaPrima * 0.75
+		gastoFabricacion = materiaPrima * 0.35
+		flag = 0
+	}
+	SINO SI (clave == 4){
+		manoObra = materiaPrima * 0.75
+		gastoFabricacion = materiaPrima * 0.28
+		flag = 0
+	}
+	SINO SI (clave == 5){
+		manoObra = materiaPrima * 0.8
+		gastoFabricacion = materiaPrima * 0.3
+		flag = 0
+	}
+	SINO SI (clave == 6){
+		manoObra = materiaPrima * 0.85
+		gastoFabricacion = materiaPrima * 0.35
+		flag = 0
+	}
+
+	SINO {
+		Escribir ("Clave Incorrecta!")
+		Escribir("Ingrese clave del producto")
+		leer clave
+		flag = 1
+	}
+} mientras (flag == 1)
+
+
+costoProduccion = materiaPrima + manoObra + gastoFabricacion
+
+venta = costoProduccion + ( costoProduccion * 0.45)
+
+Escribir("El costo de produccion es de $" . costoProduccion)
+Escribir("El valor para venta es de $" . venta)

@@ -1,0 +1,39 @@
+//calculo de citas del doctor
+
+Escribir("Ingrese el numero de cita del paciente")
+Leer cita
+
+hacer{
+	SI(cita <= 3){
+		costoactual = 200
+		costo = (cita - 1) * costoactual
+		flag = 0
+	}
+
+	SINO SI (cita >= 4 && cita < 6){
+		costoactual = 150
+		costo = ((cita - 3) * costoactual) + 600
+		flag = 0
+	}
+	SINO SI (cita >= 6 && cita < 9){
+		costoactual = 100
+		costo = ((cita - 5) * costoactual) + 900
+		flag = 0
+	}
+	SINO SI (cita >= 9){
+		costoactual = 50
+		costo = ((cita - 5) * costoactual) + 1200
+		flag = 0
+	}
+
+	SINO {
+		Escribir ("Error en el ingreso de datos")
+		Escribir("Ingrese el numero de cita del paciente")
+		Leer cita
+		flag = 1
+	}
+} mientras (flag == 1)
+
+
+Escribir("El costo de la consulta actual es de $" . costoactual)
+Escribir("El valor total del tratamiento hasta la fecha es de $" . costo)

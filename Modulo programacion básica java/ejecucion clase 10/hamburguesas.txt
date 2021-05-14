@@ -1,0 +1,39 @@
+//calculo de hamburguesas vendidas
+
+Escribir("Que tipo de hamburguesa comprará? (1=Simple, 2= doble, 3=triple)")
+Leer hamburguesa
+
+Escribir("cuantas comprara?")
+Leer cantidad
+
+Escribir ("metodo de pago (1=efectivo-debito, 2=tarjeta de credito)")
+leer metodoPago
+
+hacer{
+	SI (hamburguesa == 1){
+		valor = 2000
+		flag = 0
+	}
+	SINO SI (hamburguesa == 2){
+		valor = 2500
+		flag = 0
+	}
+	SINO SI (hamburguesa == 3){
+		valor = 2800
+		flag = 0
+	}
+	SINO {
+		Escribir ("Tipo de hamburguesa incorrecto!")
+		Escribir("Que tipo de hamburguesa comprará? (1=Simple, 2= doble, 3=triple)")
+		Leer hamburguesa
+		flag = 1
+	}
+} mientras (flag ==1)
+
+costo = cantidad * valor
+
+SI (metodoPago == 2){
+	costo = costo * 1.05
+}
+
+Escribir ("El total para " . cantidad . " hamburguesas de tipo " . hamburguesa . " es de $" . costo)
