@@ -1,0 +1,225 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package multiplos.iterativos;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author clabl
+ */
+public class MultiplosIterativos {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        int numero, modulo;
+        
+        System.out.println("Ingrese numero a evaluar");
+        numero = leer.nextInt();
+        
+        for(int i = 1; i <= 100; i++){
+            modulo = i % numero;
+            
+            if (modulo == 0){
+                System.out.println("El numero " + numero + " es multiplo de " + i);
+            }
+        }
+    }
+    
+}
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package promedionotas;
+
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+/**
+ *
+ * @author clabl
+ */
+public class Promedionotas {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        
+        int contador = 0, flag = 0;
+        double sumatoria = 0, nota, promedio;
+        
+        do{
+            System.out.println("Ingrese Nota");
+            nota = leer.nextDouble();
+            sumatoria = sumatoria + nota;
+            contador++;
+            do{
+                System.out.println("Desea ingresar otra nota? (1=SI, 2=NO)");
+                flag = leer.nextInt();
+            }while(flag > 2 || flag < 1);
+        }while (flag == 1);
+        
+        promedio = sumatoria / contador;
+        DecimalFormat df = new DecimalFormat();
+        df.setRoundingMode(RoundingMode.DOWN);
+        System.out.println("El promedio de notas es " + df.format(promedio));
+    }
+    
+}
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package paresimpares;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author clabl
+ */
+public class ParesImpares {
+
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        int numero, modulo, contPar = 0, sumaPar = 0, contImpar = 0, multiImpar = 1, flag = 0;
+        do {            
+            System.out.println("ingrese numero");
+            numero = leer.nextInt();
+            modulo = numero % 2;
+            
+            if(modulo == 0){
+                contPar++;
+                sumaPar = sumaPar + numero;
+            }
+            else{
+                contImpar++;
+                multiImpar = multiImpar * numero;
+            }
+            
+            do{
+                System.out.println("Desea ingresar otra nota? (1=SI, 2=NO)");
+                flag = leer.nextInt();
+            }while(flag > 2 || flag < 1);
+        } while (flag == 1);
+        
+        System.out.println("La suma de numeros pares ingresados es de " + sumaPar);
+        System.out.println("La Multiplicación de numeros impares ingresados es de " + multiImpar);
+        
+        if(contPar > contImpar){
+            System.out.println("Se ingresaron mas Numero PARES!!!");
+            System.out.println("Los numeros Pares ingresados fueron de " + contPar);
+            System.out.println("Los numeros Impares ingresados fueron de " + contImpar);
+        }
+        else{
+            System.out.println("Se ingresaron mas Numero IMPARES!!!");
+            System.out.println("Los numeros Pares ingresados fueron de " + contPar);
+            System.out.println("Los numeros Impares ingresados fueron de " + contImpar);
+        }
+    }
+    
+}
+
+/**
+ *
+ * @author clabl
+ */
+public class NumPerfecto {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        
+        long numero, modulo, suma = 0;
+        
+        System.out.println("Ingrese numero a evaluar");
+        numero = leer.nextLong();
+        
+        for(long i = 1; i < numero; i++){
+            modulo = numero % i;
+            if(modulo == 0){
+                suma = suma + i;
+            }
+        }
+        
+        if (suma == numero){
+            System.out.println("El numero " + numero + " es PERFECTO!");
+        }
+        else { 
+            System.out.println("El numero " + numero + " NO ES PERFECTO!");
+        }
+    }
+    
+}
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package numamigo;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author clabl
+ */
+public class NumAmigo {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        
+        int num1, num2, sumdiv1 = 0, sumdiv2 = 0, modulo;
+        System.out.println("Ingrese Primer numero");
+        num1 = leer.nextInt();
+        System.out.println("Ingrese Segundo numero");
+        num2 = leer.nextInt();
+        
+        for(int i = 1; i < num1; i++){
+            modulo = num1 % i;
+            if(modulo == 0){
+                sumdiv1 = sumdiv1 + i;
+            }
+        }
+        for(int i = 1; i < num2; i++){
+            modulo = num2 % i;
+            if(modulo == 0){
+                sumdiv2 = sumdiv2 + i;
+            }
+        }
+        
+        if((sumdiv1 == num2) && (sumdiv2 == num1)){
+            System.out.println("Los numeros " + num1 + " y " + num2 + " SON AMIGOS ");
+        }
+        else{
+            System.out.println("Los numeros " + num1 + " y " + num2 + " SON ENEMIGOS A MUERTE!");
+        }
+    }
+    
+}
+
