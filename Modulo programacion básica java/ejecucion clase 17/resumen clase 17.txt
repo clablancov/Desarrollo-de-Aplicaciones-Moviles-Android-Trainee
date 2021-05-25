@@ -1,0 +1,166 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package numerosuerte;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author clabl
+ */
+public class NumeroSuerte {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        Scanner leer = new Scanner(System.in);
+        int dia, mes, anno, suma, nroSuerte = 0;
+        
+        System.out.println("Ingrese Fecha de Nacimiento");
+        System.out.println("Dia");
+        dia = leer.nextInt();
+        System.out.println("Mes");
+        mes = leer.nextInt();
+        System.out.println("Año");
+        anno = leer.nextInt();
+        
+        suma = anno + mes + dia;
+        while(suma > 0){
+            nroSuerte += suma % 10;
+            suma = suma / 10;
+        }
+        System.out.println("El numero de la suerte es " + nroSuerte);
+        
+    }
+    
+}
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package validahora;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author clabl
+ */
+public class ValidaHora {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        int hora, minutos, segundos, flag = 0;
+        
+        System.out.println("Ingresar Hora");
+        hora = leer.nextInt();
+        System.out.println("Ingresar Minutos");
+        minutos = leer.nextInt();
+        System.out.println("Ingresar Segundos");
+        segundos = leer.nextInt();
+        
+        do {            
+            if(hora >= 0 && hora < 24){
+                //System.out.println("Hora Correcta");
+                flag = 0;
+            }
+            else{
+                System.out.println("ERROR!! Debe ingresar nuevamente el campo hora");
+                hora = leer.nextInt();
+                flag = 1;
+            }
+            if(minutos >= 0 && minutos <= 59){
+                //System.out.println("Minutos Correctos");
+                flag = 0;
+            }
+            else {
+                System.out.println("ERROR!! Debe ingresar nuevamente el campo minutos");
+                minutos = leer.nextInt();
+                flag = 1;
+            }
+            if(segundos >= 0 && segundos <= 59){
+                //System.out.println("Minutos Correctos");
+                flag = 0;
+            }
+            else {
+                System.out.println("ERROR!! Debe ingresar nuevamente el campo segundos");
+                segundos = leer.nextInt();
+                flag = 1;
+            }
+        } while (flag > 0);
+        
+        System.out.println("La hora correcta ingresada es: " + hora + ":" + minutos + ":" + segundos);
+    }
+    
+}
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package calculadora;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author clabl
+ */
+public class Calculadora {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        int numero = 0, numero2 = 0, flag = 0, resultado = 0;
+        char operador;
+        System.out.println("Calculadora");
+        System.out.println("Ingrese un numero entero");
+        numero = leer.nextInt();
+        resultado = numero;
+        do {            
+            System.out.println("Ingrese operador");
+            operador = leer.next().charAt(0);
+            System.out.println("Ingrese un numero");
+            numero2 = leer.nextInt();
+            
+            switch (operador){
+                case '+':
+                    resultado = resultado + numero2;
+                    break;
+                case '-':
+                    resultado = resultado - numero2;
+                    break;
+                case '*':
+                    resultado = resultado * numero2;
+                    break;
+                case '/':
+                    resultado = resultado / numero2;
+                    break;
+                default:
+                    System.out.println("Operador incorrecto, no se ejecutara ninguna operación");
+                    break;
+            }
+            do{
+                System.out.println("Desea ingresar otro numero? (1=SI, 2=NO)");
+                flag = leer.nextInt();
+            }while(flag > 2 || flag < 1);
+            
+        } while (flag == 1);
+        
+        System.out.println("El resultado de la operación es " + resultado);
+    }
+    
+}
