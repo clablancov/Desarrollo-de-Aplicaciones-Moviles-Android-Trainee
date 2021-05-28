@@ -1,0 +1,179 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package facturacion;
+
+/**
+ *
+ * @author clabl
+ */
+public class Facturacion {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        //Cliente
+        Cliente cliente1 = new Cliente("Befetec", "76374017-k", 0.0, 3);
+        //calcula descuento
+        cliente1.calculaDscto();
+        
+        //Servicio - dejamos el generico
+        Servicio serv1 = new Servicio();
+        
+        //Factura a emitir
+        
+        Factura fact1 = new Factura(102);
+        fact1.setNetoCantidad(serv1.monto, 4);
+        fact1.calculaIva();
+        fact1.calculaTotal();
+        fact1.emiteFactura();
+        
+        
+        
+        
+    }
+    
+}
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package facturacion;
+
+/**
+ *
+ * @author clabl
+ */
+public class Cliente {
+    public String razonSocial;
+    public String rut;
+    public double dscto;
+    public int antiguedad;
+    
+    public Cliente(){
+        this.razonSocial = "Cliente Generico";
+        this.rut = "1-9";
+        this.dscto = 0.0;
+        this.antiguedad = 0;
+        
+    }
+    public Cliente(String razonSocial, String rut, double dscto, int antiguedad){
+        this.razonSocial = razonSocial;
+        this.rut = rut;
+        this.dscto = dscto;
+        this.antiguedad = antiguedad;
+        
+    }
+    
+    public void setRut(String rut){
+        this.rut = rut;
+    }
+    public void setRazonSocial(String razonSocial){
+        this.razonSocial = razonSocial;
+    }
+    public void setDscto(double dscto){
+        this.dscto = dscto;
+    }
+    public void setAntiguedad(double dscto){
+        this.dscto = dscto;
+    }
+    
+    public void calculaDscto(){
+        this.dscto = this.antiguedad * 1.2;
+        System.out.println("Descuento calculado, quedo en "+ this.dscto);
+    }
+}
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package facturacion;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+/**
+ *
+ * @author clabl
+ */
+public class Factura {
+    int folio;
+    Calendar fechaEmision;
+    Calendar fechaVencimiento;
+    int cantidad;
+    int montoNeto;
+    double iva;
+    double valorIva;
+    double total;
+    
+    public Factura(int folio){
+        this.folio = folio;
+        this.valorIva = 0.19;
+        this.fechaEmision = new GregorianCalendar();
+        this.fechaVencimiento = new GregorianCalendar();
+    }
+    
+    public void setNetoCantidad(int montoServicio, int cantidad){
+        this.montoNeto = montoServicio * cantidad;
+        this.cantidad = cantidad;
+    }
+    
+    public void calculaIva(){
+        this.iva = montoNeto * valorIva;
+    }
+    
+    public void calculaTotal(){
+        this.total = montoNeto + iva;
+    }
+    
+    public double getTotal(){
+        return total;
+    }
+    
+    public void setIva(double valorIva){
+        this.valorIva = valorIva;
+        System.out.println("Iva Modificado");
+    }
+    
+    public void emiteFactura(){
+        System.out.println("===FACTURA NRO." + this.folio);
+        System.out.println("Fecha Emision: " + this.fechaEmision.get(Calendar.DATE) + "-" + this.fechaEmision.get(Calendar.MONTH) + "-" + this.fechaEmision.get(Calendar.YEAR));
+        System.out.println("Fecha Vencimiento: " + this.fechaVencimiento.get(Calendar.DATE) + "-" + this.fechaVencimiento.get(Calendar.MONTH) + "-" + this.fechaVencimiento.get(Calendar.YEAR));
+        System.out.println("Valor Neto: $" + montoNeto);
+        System.out.println("Valor IVA: $" + this.iva);
+        System.out.println("Valor Total: $" + this.total);
+        System.out.println("Gracias por la compra!!!!");
+    }
+}
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package facturacion;
+
+/**
+ *
+ * @author clabl
+ */
+public class Servicio {
+    public String descripcion;
+    public int monto;
+    
+    public Servicio(){
+        this.descripcion = "Asesorias TI";
+        this.monto = 20500;
+    }
+    public Servicio(String descripcion, int monto){
+        this.descripcion = descripcion;
+        this.monto = monto;
+    }
+}
