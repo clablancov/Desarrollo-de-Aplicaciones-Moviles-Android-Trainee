@@ -1,0 +1,424 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package herenciaelectrodomesticos;
+
+/**
+ *
+ * @author clabl
+ */
+public class HerenciaElectrodomesticos {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        Electrodomestico e1 = new Electrodomestico();
+        
+        Refrigerador r1 = new Refrigerador(1, "chilin", "A+", true, 220, "SN123456", "Evanny", "India", 50.0, 5.0, 45);
+        
+        
+    }
+    
+}
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package herenciaelectrodomesticos;
+
+/**
+ *
+ * @author clabl
+ */
+public class Electrodomestico {
+    private int voltaje;
+    private String serialnumber, marca, procedencia;
+    private double peso, amperaje, potencia;
+    
+    public Electrodomestico(){
+        voltaje = 220;
+        serialnumber = "Sin Datos";
+        marca = "generico";
+        procedencia = "Chile";
+        peso = 1.0;
+        amperaje = 0.0;
+        potencia = 1.0;
+    }
+    
+    public Electrodomestico(int voltaje, String serialnumber, String marca, String procedencia, double peso, double amperaje, double potencia){
+        this.amperaje = amperaje;
+        this.marca = marca;
+        this.peso = peso;
+        this.potencia = potencia;
+        this.procedencia = procedencia;
+        this.serialnumber = serialnumber;
+        this.voltaje = voltaje;
+    }
+
+    public int getVoltaje() {
+        return voltaje;
+    }
+
+    public void setVoltaje(int voltaje) {
+        this.voltaje = voltaje;
+    }
+
+    public String getSerialnumber() {
+        return serialnumber;
+    }
+
+    public void setSerialnumber(String serialnumber) {
+        this.serialnumber = serialnumber;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getProcedencia() {
+        return procedencia;
+    }
+
+    public void setProcedencia(String procedencia) {
+        this.procedencia = procedencia;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public double getAmperaje() {
+        return amperaje;
+    }
+
+    public void setAmperaje(double amperaje) {
+        this.amperaje = amperaje;
+    }
+
+    public double getPotencia() {
+        return potencia;
+    }
+
+    public void setPotencia(double potencia) {
+        this.potencia = potencia;
+    }
+
+    public String imprimeinfo() {
+        return "Electrodomestico{" + "voltaje=" + voltaje + ", serialnumber=" + serialnumber + ", marca=" + marca + ", procedencia=" + procedencia + ", peso=" + peso + ", amperaje=" + amperaje + ", potencia=" + potencia + '}';
+    }
+    
+    
+}/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package herenciaelectrodomesticos;
+
+/**
+ *
+ * @author clabl
+ */
+public class Electrodomestico {
+    private int voltaje;
+    private String serialnumber, marca, procedencia;
+    private double peso, amperaje, potencia;
+    
+    public Electrodomestico(){
+        voltaje = 220;
+        serialnumber = "Sin Datos";
+        marca = "generico";
+        procedencia = "Chile";
+        peso = 1.0;
+        amperaje = 0.0;
+        potencia = 1.0;
+    }
+    
+    public Electrodomestico(int voltaje, String serialnumber, String marca, String procedencia, double peso, double amperaje, double potencia){
+        this.amperaje = amperaje;
+        this.marca = marca;
+        this.peso = peso;
+        this.potencia = potencia;
+        this.procedencia = procedencia;
+        this.serialnumber = serialnumber;
+        this.voltaje = voltaje;
+    }
+
+    public int getVoltaje() {
+        return voltaje;
+    }
+
+    public void setVoltaje(int voltaje) {
+        this.voltaje = voltaje;
+    }
+
+    public String getSerialnumber() {
+        return serialnumber;
+    }
+
+    public void setSerialnumber(String serialnumber) {
+        this.serialnumber = serialnumber;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getProcedencia() {
+        return procedencia;
+    }
+
+    public void setProcedencia(String procedencia) {
+        this.procedencia = procedencia;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public double getAmperaje() {
+        return amperaje;
+    }
+
+    public void setAmperaje(double amperaje) {
+        this.amperaje = amperaje;
+    }
+
+    public double getPotencia() {
+        return potencia;
+    }
+
+    public void setPotencia(double potencia) {
+        this.potencia = potencia;
+    }
+
+    public String imprimeinfo() {
+        return "Electrodomestico{" + "voltaje=" + voltaje + ", serialnumber=" + serialnumber + ", marca=" + marca + ", procedencia=" + procedencia + ", peso=" + peso + ", amperaje=" + amperaje + ", potencia=" + potencia + '}';
+    }
+    
+    
+}
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package herenciaelectrodomesticos;
+
+/**
+ *
+ * @author clabl
+ */
+public class Refrigerador extends Electrodomestico{
+    private int puertas;
+    private String modelo, eficiencia;
+    private boolean dispensador;
+
+    public Refrigerador(int puertas, String modelo, String eficiencia, boolean dispensador, int voltaje, String serialnumber, String marca, String procedencia, double peso, double amperaje, double potencia) {
+        super(voltaje, serialnumber, marca, procedencia, peso, amperaje, potencia);
+        this.puertas = puertas;
+        this.modelo = modelo;
+        this.eficiencia = eficiencia;
+        this.dispensador = dispensador;
+    }
+
+    public int getPuertas() {
+        return puertas;
+    }
+
+    public void setPuertas(int puertas) {
+        this.puertas = puertas;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public String getEficiencia() {
+        return eficiencia;
+    }
+
+    public void setEficiencia(String eficiencia) {
+        this.eficiencia = eficiencia;
+    }
+
+    public boolean isDispensador() {
+        return dispensador;
+    }
+
+    public void setDispensador(boolean dispensador) {
+        this.dispensador = dispensador;
+    }
+
+    
+    public String imprimeinfo() {
+        return "Refrigerador{" + "puertas=" + puertas + ", modelo=" + modelo + ", eficiencia=" + eficiencia + ", dispensador=" + dispensador + '}';
+    }
+}
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package herenciaelectrodomesticos;
+
+/**
+ *
+ * @author clabl
+ */
+public class Lavadora extends Electrodomestico{
+    private int kilos;
+    private String modelo;
+    private boolean secadora, frontal;
+
+    public Lavadora(int kilos, String modelo, boolean secadora, boolean frontal) {
+        this.kilos = kilos;
+        this.modelo = modelo;
+        this.secadora = secadora;
+        this.frontal = frontal;
+    }
+
+    public Lavadora(int kilos, String modelo, boolean secadora, boolean frontal, int voltaje, String serialnumber, String marca, String procedencia, double peso, double amperaje, double potencia) {
+        super(voltaje, serialnumber, marca, procedencia, peso, amperaje, potencia);
+        this.kilos = kilos;
+        this.modelo = modelo;
+        this.secadora = secadora;
+        this.frontal = frontal;
+    }
+
+    public int getKilos() {
+        return kilos;
+    }
+
+    public void setKilos(int kilos) {
+        this.kilos = kilos;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public boolean isSecadora() {
+        return secadora;
+    }
+
+    public void setSecadora(boolean secadora) {
+        this.secadora = secadora;
+    }
+
+    public boolean isFrontal() {
+        return frontal;
+    }
+
+    public void setFrontal(boolean frontal) {
+        this.frontal = frontal;
+    }
+
+    @Override
+    public String toString() {
+        return "Lavadora{" + "kilos=" + kilos + ", modelo=" + modelo + ", secadora=" + secadora + ", frontal=" + frontal + '}';
+    }
+    
+}
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package herenciaelectrodomesticos;
+
+/**
+ *
+ * @author clabl
+ */
+public class Minicomponente extends Electrodomestico{
+    private boolean portatil;
+    private int parlantes, watts;
+    private double bluetooth;
+
+    public Minicomponente(boolean portatil, int parlantes, int watts, double bluetooth) {
+        this.portatil = portatil;
+        this.parlantes = parlantes;
+        this.watts = watts;
+        this.bluetooth = bluetooth;
+    }
+
+    public Minicomponente(boolean portatil, int parlantes, int watts, double bluetooth, int voltaje, String serialnumber, String marca, String procedencia, double peso, double amperaje, double potencia) {
+        super(voltaje, serialnumber, marca, procedencia, peso, amperaje, potencia);
+        this.portatil = portatil;
+        this.parlantes = parlantes;
+        this.watts = watts;
+        this.bluetooth = bluetooth;
+    }
+
+    public boolean isPortatil() {
+        return portatil;
+    }
+
+    public void setPortatil(boolean portatil) {
+        this.portatil = portatil;
+    }
+
+    public int getParlantes() {
+        return parlantes;
+    }
+
+    public void setParlantes(int parlantes) {
+        this.parlantes = parlantes;
+    }
+
+    public int getWatts() {
+        return watts;
+    }
+
+    public void setWatts(int watts) {
+        this.watts = watts;
+    }
+
+    public double getBluetooth() {
+        return bluetooth;
+    }
+
+    public void setBluetooth(double bluetooth) {
+        this.bluetooth = bluetooth;
+    }
+
+    @Override
+    public String toString() {
+        return "Minicomponente{" + "portatil=" + portatil + ", parlantes=" + parlantes + ", watts=" + watts + ", bluetooth=" + bluetooth + '}';
+    }
+    
+}

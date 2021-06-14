@@ -1,0 +1,199 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package personaabstracta;
+
+/**
+ *
+ * @author clabl
+ */
+public class PersonaAbstracta {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        Medico med = new Medico("12345", "Cirujano", "Claudio", "Blanco", "Un algun lugar del mundo", "cla.blancov@gmail.com", "963712810", 33);
+        Profesor prof = new Profesor("4 medio", 45, "Barbara", "Blanco", "enunlugardelmundo #123", "b.blanco@colegio.cl", "963712810", 40, "Lenguaje e Historia");
+        
+        med.enviarCorreo();
+        prof.enviarCorreo();
+    }
+    
+}
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package personaabstracta;
+
+/**
+ *
+ * @author clabl
+ */
+public abstract class Persona {
+    private String nombre, apellido, direccion, email, telefono;
+    private int edad;
+
+    public Persona(String nombre, String apellido, String direccion, String email, String telefono, int edad) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccion = direccion;
+        this.email = email;
+        this.telefono = telefono;
+        this.edad = edad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public abstract String mostrarDatos();
+    
+    public abstract void llamar();
+    
+    public abstract void enviarCorreo();
+}
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package personaabstracta;
+
+/**
+ *
+ * @author clabl
+ */
+public class Medico extends Persona{
+    private String rolColmed, especialidad;
+
+    public Medico(String rolColmed, String especialidad, String nombre, String apellido, String direccion, String email, String telefono, int edad) {
+        super(nombre, apellido, direccion, email, telefono, edad);
+        this.rolColmed = rolColmed;
+        this.especialidad = especialidad;
+    }
+
+    public String getRolColmed() {
+        return rolColmed;
+    }
+
+    public void setRolColmed(String rolColmed) {
+        this.rolColmed = rolColmed;
+    }
+
+    public String getEspecialidad() {
+        return especialidad;
+    }
+
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
+    }
+        
+    @Override
+    public String mostrarDatos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void llamar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void enviarCorreo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+}
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package personaabstracta;
+
+/**
+ *
+ * @author clabl
+ */
+public class Profesor extends Persona{
+    private String jefatura, mencion;
+    private int hh;
+
+    public Profesor(String jefatura, int hh, String nombre, String apellido, String direccion, String email, String telefono, int edad, String mencion) {
+        super(nombre, apellido, direccion, email, telefono, edad);
+        this.jefatura = jefatura;
+        this.hh = hh;
+        this.mencion = mencion;
+    }
+
+    @Override
+    public String mostrarDatos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void llamar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void enviarCorreo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+}
