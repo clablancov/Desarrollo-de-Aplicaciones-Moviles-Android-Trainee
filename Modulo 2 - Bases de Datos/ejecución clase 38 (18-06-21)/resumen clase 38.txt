@@ -1,0 +1,41 @@
+create database empresita character set utf8;
+
+create table empleado(
+	idEmpleado int auto_increment,
+    nombre varchar(30),
+    apellidoP varchar(30),
+    apellidoM varchar(30),
+    edad int,
+    depto varchar(50),
+    cargo varchar(50),
+    sueldo int,
+    fechaIngreso date,
+    primary key(idEmpleado)
+);
+
+INSERT INTO `empleado` (`idEmpleado`,`nombre`,`apellidoP`,`apellidoM`,`edad`,`depto`,`cargo`,`sueldo`,`fechaIngreso`) VALUES 
+(1,"Echo","Battle","Pope",22,"erat vitae","Augue Institute",3229687,"2021-09-16"),(2,"Warren","Rojas","Giles",22,"ante","Tellus Aenean Egestas Corporation",2813789,"2020-07-13"),(3,"Hedy","Atkinson","Gates",33,"elementum purus,","Ultrices A Auctor Incorporated",680402,"2021-03-04"),(4,"Aline","Crawford","Mckee",20,"nonummy.","Turpis Aliquam Adipiscing LLC",4240736,"2020-11-23"),(5,"Jonas","Jefferson","Savage",42,"nec","A Malesuada Id Corporation",1486387,"2022-05-24"),(6,"Jason","Hines","Day",37,"Nullam ut","Luctus LLP",3259414,"2021-10-17"),(7,"Ariana","Howard","Booker",39,"nonummy","Amet Risus Company",4336247,"2020-07-14"),(8,"Raphael","Prince","Henderson",24,"nec","Proin Non Massa Corporation",1065815,"2021-08-05"),(9,"Alisa","Herrera","Downs",44,"pede. Cras","Magna Sed Associates",2923387,"2021-02-15"),(10,"Oprah","Williams","Harrison",44,"adipiscing","Scelerisque Mollis Phasellus LLC",874303,"2021-09-05"),
+(11,"Ivory","Beck","Hubbard",34,"erat. Sed","Ut Nisi A PC",2230257,"2022-03-11"),(12,"Meredith","Vance","Joseph",40,"auctor velit.","At Lacus Quisque Foundation",4457297,"2020-11-14"),(13,"Kelsie","Lewis","Sargent",36,"dolor","Erat Semper PC",3039349,"2021-01-09"),(14,"Hiram","Battle","Wolf",28,"lorem","Et Magnis Dis Incorporated",2859232,"2021-04-23"),(15,"Remedios","Robinson","Willis",57,"malesuada","Aliquet Associates",3186139,"2022-05-03"),(16,"Willa","Gallagher","Mcneil",19,"id, erat.","Sagittis Felis Donec Limited",1147078,"2021-10-22"),(17,"Peter","Eaton","Cochran",30,"metus eu","Euismod Enim Etiam Corporation",2146792,"2022-01-17"),(18,"Ori","Pope","Benton",64,"dictum eu,","Sollicitudin Foundation",4122679,"2021-01-04"),(19,"Berk","Horne","Mcneil",34,"eu","Facilisis Inc.",1588962,"2021-12-23"),(20,"Noelani","Combs","Young",37,"at","Non Dui Nec Incorporated",1543888,"2020-10-09");
+
+
+create table libro(
+	idLibro int auto_increment,
+    nombreLibro varchar(50),
+    autor varchar(50),
+    editiorial varchar(50),
+    edicion int,
+    annoPublicacion varchar(4),
+    categoria varchar(50),
+    ejemplares int,
+    primary key (idLibro)
+);
+
+INSERT INTO `libro` (`idLibro`,`nombreLibro`,`autor`,`editiorial`,`edicion`,`annoPublicacion`,`categoria`,`ejemplares`) VALUES (1,"neque tellus, imperdiet","Sawyer Y. Emerson","Fermentum Metus Aenean Corp.",2,2018,"libero.",140),(2,"Donec tempus, lorem","Gray R. Clay","Neque Corporation",5,2008,"vulputate,",177),(3,"commodo at, libero.","Cassandra F. Morin","Risus Incorporated",10,2019,"sociis",101),(4,"sem ut dolor","India O. Simpson","Nunc Commodo Corporation",8,2021,"In",144),(5,"pede nec ante","Charissa J. Peters","Convallis Convallis Dolor Inc.",10,2007,"sociis",30),(6,"non, sollicitudin a,","Vielka K. Bailey","Ut Nulla Cras Corporation",10,2002,"Ut",191),(7,"aliquet. Proin velit.","Cain F. Hatfield","Convallis Ante Lectus Consulting",2,2021,"non",121),(8,"Ut semper pretium","Karen U. Horn","Porta Elit A Corporation",6,2017,"nisi.",137),(9,"hendrerit consectetuer, cursus","Cain M. Leblanc","Ultricies LLP",7,2015,"adipiscing",119),(10,"dictum mi, ac","Lawrence N. Erickson","Turpis Non PC",7,1995,"semper",154),(11,"augue ac ipsum.","Jameson G. Walter","Egestas Aliquam Nec Foundation",8,1995,"tincidunt",280),(12,"felis purus ac","Tad I. Sweeney","Lorem Semper Corporation",6,2015,"consectetuer",228),(13,"ligula eu enim.","Kasimir C. Leon","Risus Consulting",9,2019,"massa.",243),(14,"cursus in, hendrerit","Ebony K. Carter","Penatibus Corp.",1,2001,"ante",171),(15,"augue. Sed molestie.","Rhea P. Wallace","Luctus Inc.",10,2009,"ac",110),(16,"est, congue a,","Ima X. Evans","Nibh Corp.",5,2012,"placerat",143),(17,"Nunc ullamcorper, velit","Samuel H. Phelps","Et Consulting",10,2020,"lobortis",228),(18,"Nunc commodo auctor","Celeste H. Daniel","Faucibus Morbi Vehicula Industries",8,2013,"adipiscing.",60),(19,"libero. Morbi accumsan","Stewart V. Smith","Dolor Vitae Incorporated",9,2014,"massa.",218),(20,"viverra. Maecenas iaculis","Julian N. English","Ac Turpis Egestas Inc.",10,1995,"neque",209);
+
+create table editorial(
+	idEditorial int auto_increment,
+    nombre varchar(30),
+    direccion text,
+    primary key (idEditorial)
+);
+INSERT INTO `editorial` (`idEditorial`,`nombre`,`direccion`) VALUES (1,"Tincidunt Orci Associates","3523 Non, Avenida"),(2,"Nec Cursus PC","Apartado núm.: 139, 4375 Est. C/"),(3,"Augue LLP","Apdo.:171-7232 Ridiculus C."),(4,"Posuere At Velit Incorporated","4020 Felis "),(5,"Malesuada Foundation","9843 Ac Carretera"),(6,"Ut Aliquam Iaculis Incorporated","Apartado núm.: 941, 2000 Eu Calle"),(7,"Arcu Ac Orci Incorporated","564-8946 Vel "),(8,"Ridiculus Inc.","Apdo.:684-9251 Nulla. Avda."),(9,"Vulputate Incorporated","Apdo.:752-639 Mauris Ctra."),(10,"Nunc Institute","Apdo.:687-3117 Amet Avda."),(11,"Eu Placerat Eget Foundation","5865 Risus. C/"),(12,"Mauris Limited","Apdo.:613-108 Molestie Avenida"),(13,"Et Company","788-2415 Morbi Carretera"),(14,"Velit Pellentesque Ultricies LLP","2691 A Avenida"),(15,"Imperdiet Non Vestibulum Limited","7975 Ornare. Avenida"),(16,"Sem Ltd","Apdo.:295-7659 Aliquam C/"),(17,"Mauris Limited","405-9106 Dui. Avenida"),(18,"Nunc Quis Arcu Associates","Apdo.:898-6014 Ipsum "),(19,"Ultrices Vivamus Corp.","Apartado núm.: 934, 1626 Accumsan C/"),(20,"Tellus Justo Foundation","980-7297 Pellentesque Calle");

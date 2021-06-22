@@ -1,0 +1,25 @@
+create database priemrabd character set utf8;
+
+use priemrabd;
+
+create table primeraTabla(
+	idTabla int auto_increment,
+    nombre varchar(30),
+    apellidoP varchar(30),
+    fechaNacimiento date,
+    primary key(idTabla)
+);
+
+create table users(
+	idUser int auto_increment,
+    nombre varchar(30),
+    pwd varchar(20),
+    rol int,
+    primary key(idUser)
+);
+
+create table roles(
+	idRol int auto_increment,
+    nombre varchar(30),
+    primary key(idRol)
+);

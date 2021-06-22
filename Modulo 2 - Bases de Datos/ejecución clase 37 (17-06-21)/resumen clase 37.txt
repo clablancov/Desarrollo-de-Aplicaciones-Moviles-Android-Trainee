@@ -1,0 +1,25 @@
+/** Clase Jueves 17-06 **/
+alter table users add created_at datetime;
+alter table users add updated_at datetime;
+
+alter table roles modify nombre text;
+alter table users modify pwd varchar(100);
+
+alter table users drop column created_at;
+
+drop table primeraTabla;
+
+Insert INTO roles (nombre) VALUES
+("Administrador"),
+("Usuario"),
+("Esclavo");
+
+Insert INTO users (nombre,pwd,rol,updated_at) VALUES
+("Claudio", "123456", 1, "2021-06-18 22:00:00"),
+("Loreto", "123456", 1, "2021-06-18 22:00:00"),
+("Claudio JR", "123456", 2, "2021-06-18 22:00:00"),
+("Sahir", "123456", 3, "2021-06-18 22:00:00");
+
+Select * FROM roles;
+
+Select * FROM users;

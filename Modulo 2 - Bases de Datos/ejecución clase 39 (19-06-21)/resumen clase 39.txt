@@ -1,0 +1,33 @@
+-- Clase Sabado 19-06
+-- EMPLEADO
+Select * from empleado;
+Select idEmpleado, nombre, apellidoP, apellidoM, cargo, sueldo FROM empleado;
+-- con where
+
+Select idEmpleado, nombre, apellidoP, apellidoM, cargo, sueldo FROM empleado where depto Like '%eu%';
+Select idEmpleado, nombre, apellidoP, apellidoM, cargo, sueldo FROM empleado where depto Like '%eu%' AND sueldo between 1500000 AND 2100000;
+Select idEmpleado, nombre, apellidoP, apellidoM, cargo, sueldo FROM empleado where depto Like '%eu%' OR sueldo between 1500000 AND 2100000;
+Select idEmpleado, nombre, apellidoP, apellidoM, cargo, sueldo FROM empleado where depto IN ('nec', 'eu');
+
+-- LIBROS
+Select * from libro;
+Select idLibro, nombreLibro, annoPublicacion, ejemplares FROM libro;
+
+-- con WHERE
+
+Select idLibro, nombreLibro, annoPublicacion, ejemplares FROM libro where ejemplares > 200;
+Select idLibro, nombreLibro, annoPublicacion, ejemplares FROM libro where ejemplares > 200 AND edicion = 10;
+Select idLibro, nombreLibro, annoPublicacion, ejemplares FROM libro where ejemplares > 200 OR edicion = 10;
+Select idLibro, nombreLibro, annoPublicacion, ejemplares FROM libro where nombreLibro IN ('ut', 'ac');
+
+
+-- EDITORIAL
+
+select * from editorial;	
+Select idEditorial, nombre FROM editorial;
+
+-- con WHERECITO
+
+Select idEditorial, nombre FROM editorial where direccion LIKE '%Apdo%';
+Select idEditorial, nombre FROM editorial where direccion LIKE '%Apdo%' AND idEditorial > 10;
+Select idEditorial, nombre FROM editorial where direccion LIKE '%Apdo%' OR idEditorial > 10;
