@@ -1,0 +1,48 @@
+-- libros con mas de 100 ejemplares
+SELECT * 
+FROM libro
+WHERE ejemplares > 100;
+
+-- empleados con sueldo mayor a 500.000 y pertenecen al depto
+
+SELECT nombre,
+apellidoP,
+apellidoM,
+cargo
+FROM empleado
+WHERE sueldo > 500000
+AND depto = "nec";
+
+-- Libros de primera o segunda edicion del autor
+SELECT *
+FROM libro
+WHERE edicion IN (1,2)
+AND autor = "Sawyer Y. Emerson";
+
+-- determinar autores que tienen ediciones 1,2 o 3
+SELECT autor
+FROM libro
+WHERE edicion IN (1,2,3)
+group by autor;
+
+-- determinar empleados que pertenencen al depto
+
+SELECT *
+FROM empleado
+WHERE depto = "nec";
+
+-- UTILIZAR NOT IN
+SELECT autor
+FROM libro
+WHERE edicion NOT IN (1,2,3)
+group by autor;
+
+-- Distinto <>
+SELECT *
+FROM empleado
+WHERE depto <> "nec";
+
+-- LIKE
+SELECT *
+FROM empleado
+WHERE depto LIKE "%or%";
