@@ -1,0 +1,91 @@
+-- Clase 23-06-21
+-- determinar libros que no estan en 2 editoriales
+SELECT *
+FROM libro
+WHERE editorial NOT IN ('Fermentum Metus Aenean Corp.', '%Corp%');
+
+-- libros que tengan entre 100 y 330 ejemplares
+SELECT nombreLibro, editorial, ejemplares 
+FROM libro
+WHERE ejemplares BETWEEN 100 AND 330;
+
+-- EMPLEADOS CON SUELDO ENTRE 550.000 Y 750.000
+SELECT nombre, apellidoP, cargo
+FROM empleado
+WHERE sueldo BETWEEN 550000 AND 750000;
+
+-- EMPLEADOS QUE NO PERTENECEN A X DEPTO
+SELECT nombre, apellidoP, apellidoM, cargo, depto, edad
+FROM empleado
+WHERE depto <> 'comercial';
+
+-- ORDER BY
+SELECT *
+FROM EDITORIAL
+ORDER BY idEditorial DESC;
+
+SELECT *
+FROM empleado
+ORDER BY sueldo ASC;
+
+SELECT *
+FROM libro
+ORDER BY annoPublicacion DESC;
+
+-- empleados ordenados por cargo
+SELECT *
+FROM empleado
+ORDER BY cargo ASC;
+
+-- empleado ordenados por depto
+SELECT nombre, apellidoP, cargo, depto
+FROM empleado
+ORDER BY depto DESC;
+
+-- empleados ordenados por sueldo desde el mas alto al mas bajo
+SELECT nombre, cargo, sueldo
+FROM empleado
+ORDER BY sueldo DESC;
+
+-- libros ordenados por editorial
+SELECT autor, nombreLibro, editorial
+FROM libro
+ORDER BY editorial ASC;
+
+-- libros ordenados por ejemplares, de mayor a menor
+SELECT *
+FROM libro
+ORDER BY ejemplares DESC;
+
+-- COUNT
+SELECT count(*) as conteditorial
+FROM editorial;
+
+SELECT count(*) as contempleado
+FROM empleado
+WHERE depto = "informatica";
+
+SELECT count(*) as contCB
+FROM libro
+WHERE autor = "Claudio Blanco";
+
+-- MAX y MIN
+SELECT max(sueldo)
+FROM empleado;
+
+SELECT min(ejemplares)
+FROM libro;
+
+-- SUM
+SELECT SUM(sueldo)
+FROM empleado;
+
+SELECT SUM(ejemplares)
+FROM libro;
+
+-- AVG
+SELECT AVG(sueldo)
+FROM empleado;
+
+SELECT AVG(ejemplares)
+FROM libro;
