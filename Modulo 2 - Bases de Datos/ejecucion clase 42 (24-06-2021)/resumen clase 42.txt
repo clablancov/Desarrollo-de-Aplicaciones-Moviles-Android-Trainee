@@ -1,0 +1,38 @@
+-- Clase 24-06-21
+
+-- Mayor Sueldo
+Select depto, MAX(sueldo) as mayorSueldo
+FROM empleado
+GROUP BY depto;
+
+-- Menor Sueldo
+Select depto, MIN(sueldo) as menorSueldo
+FROM empleado
+GROUP BY depto;
+
+-- Cuentos empleados hay por depto
+SELECT depto, count(*) as cantEmpleados
+FROM empleado
+GROUP BY depto;
+
+-- Determinar gasto mensual en sueldo
+SELECT SUM(sueldo) as gastoMensual
+FROM empleado;
+
+-- Agrupar por editorial y ver cuantos libros pertenecen a cada una
+SELECT editorial, SUM(ejemplares) as cantLibros
+FROM libro
+GROUP BY editorial;
+
+-- cantidad total de ejhemplares de biblioteca
+SELECT SUM(ejemplares) as ejemplares
+FROM libro;
+
+Entidades
+Producto
+Categoria
+Plataforma
+Tipo_Producto
+Desarrollador
+Proveedor
+Ubicacion
