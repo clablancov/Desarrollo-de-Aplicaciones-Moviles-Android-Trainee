@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Registro</string>
+    <string name="Titulo">Registrate Aquí!</string>
+    <string name="etnombres">Ingrese su nombre</string>
+    <string name="etapellidos">Ingrese su apellido</string>
+    <string name="dtdireccion">Dirección</string>
+    <string name="etmail">Correo electrónico</string>
+    <string name="ettelefono">Teléfono</string>
+    <string name="rbmasculino">Masculino</string>
+    <string name="rbfemenino">Femenino</string>
+    <string name="swnovedades">Desea recibir novedades en su correo electrónico?</string>
+    <string name="btregistrar">Registrar</string>
+    <!-- Activity Nuevo Usuario -->
+    <string name="tituloUsuario">Registro Exitoso!!</string>
+</resources>

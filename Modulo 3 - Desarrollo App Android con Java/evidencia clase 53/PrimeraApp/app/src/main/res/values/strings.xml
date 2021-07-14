@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">PrimeraApp</string>
+    <string name="button">EL primer boton</string>
+    <string name="button1">El boton que revoluciona al primero</string>
+    <string name="numero1">Ingrese primer valor</string>
+    <string name="numero2">Ingrese Segundo valor</string>
+    <string name="resultado">Resultado</string>
+    <string name="button3">Sumar</string>
+    <string name="button4">Sumar</string>
+    <string name="button5">Volver</string>
+    <string name="button6">Resta</string>
+    <string name="button7">Multiplica</string>
+    <string name="button8">Divide</string>
+    <string name="tituloPrincipal">Operaciones Básicas</string>
+    <string name="calcular">Calcular</string>
+    <string name="botonoprb">Operaciones RB</string>
+    <string name="botonopcb">Operaciones CB</string>
+    <string name="botonopsw">Operaciones SW</string>
+    <string name="botonopsp">Operaciones Spinner</string>
+    <string name="etnombre">Ingrese su nombre</string>
+</resources>

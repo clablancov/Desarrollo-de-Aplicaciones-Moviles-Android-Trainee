@@ -1,0 +1,219 @@
+package com.example.primeraapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class Sumar extends AppCompatActivity {
+
+    private EditText num1, num2;
+    private TextView resulSuma;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sumar);
+
+        num1 = findViewById(R.id.numero1);
+        num2 = findViewById(R.id.numero2);
+        resulSuma = findViewById(R.id.resultado);
+    }
+
+    public void sumar(View v){
+        int valor1 = Integer.parseInt(num1.getText().toString());
+        int valor2 = Integer.parseInt(num2.getText().toString());
+
+        int suma = valor1 + valor2;
+        resulSuma.setText("El resultado de la suma es " + suma);
+    }
+
+    public void nextInicio(View v){
+        Intent inicio = new Intent(this, MainActivity.class);
+        startActivity(inicio);
+    }
+}
+
+package com.example.primeraapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class Restar extends AppCompatActivity {
+
+    private EditText num1, num2;
+    private TextView resulResta;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_restar);
+
+        num1 = findViewById(R.id.numero3);
+        num2 = findViewById(R.id.numero);
+        resulResta = findViewById(R.id.resultado2);
+    }
+
+    public void restar(View v){
+        int valor1 = Integer.parseInt(num1.getText().toString());
+        int valor2 = Integer.parseInt(num2.getText().toString());
+
+        int resta = valor1 - valor2;
+        resulResta.setText("El resultado de la suma es " + resta);
+    }
+
+    public void nextInicio(View v){
+        Intent inicio = new Intent(this, MainActivity.class);
+        startActivity(inicio);
+    }
+}
+
+package com.example.primeraapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class Multiplicar extends AppCompatActivity {
+
+    private EditText num1, num2;
+    private TextView resulMultiplica;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_multiplicar);
+
+        num1 = findViewById(R.id.numero5);
+        num2 = findViewById(R.id.numero4);
+        resulMultiplica = findViewById(R.id.resultado3);
+    }
+
+    public void multiplicar(View v){
+        int valor1 = Integer.parseInt(num1.getText().toString());
+        int valor2 = Integer.parseInt(num2.getText().toString());
+
+        int multiplica = valor1 * valor2;
+        resulMultiplica.setText("El resultado de la suma es " + multiplica);
+    }
+
+    public void nextInicio(View v){
+        Intent inicio = new Intent(this, MainActivity.class);
+        startActivity(inicio);
+    }
+}
+
+package com.example.primeraapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class Dividir extends AppCompatActivity {
+
+    private EditText num1, num2;
+    private TextView resulDivide;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_dividir);
+
+        num1 = findViewById(R.id.numero7);
+        num2 = findViewById(R.id.numero6);
+        resulDivide = findViewById(R.id.resultado4);
+    }
+
+    public void dividir(View v){
+        int valor1 = Integer.parseInt(num1.getText().toString());
+        int valor2 = Integer.parseInt(num2.getText().toString());
+	if(valor1 > 0 && valor2 > 0){
+			int suma = valor1 / valor2;
+            		resulDivide.setText("El Resultado es: " + suma);
+		}
+		else{
+			resulDivide.setText("ERROR! No se puede dividir por 0!");
+		}
+    }
+
+    public void nextInicio(View v){
+        Intent inicio = new Intent(this, MainActivity.class);
+        startActivity(inicio);
+    }
+}
+
+package com.example.primeraapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.TextView;
+
+public class OPRadioButton extends AppCompatActivity {
+    private RadioButton rsuma, rresta, rmultiplica, rdivide;
+    private TextView resultado;
+    private EditText n1, n2;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_opradio_button);
+        rsuma = findViewById(R.id.rbsuma);
+        rresta = findViewById(R.id.rbresta);
+        rmultiplica = findViewById(R.id.rbmultiplica);
+        rdivide = findViewById(R.id.rbdivide);
+        resultado = findViewById(R.id.rbresultado);
+        n1 = findViewById(R.id.num1);
+        n2 = findViewById(R.id.num2);
+    }
+    //se agrega operaciones para radiobutton
+    public void operacion(View v){
+        if(rsuma.isChecked()){
+            int suma = Integer.parseInt(n1.getText().toString()) + Integer.parseInt(n2.getText().toString());
+            resultado.setText("El Resultado es: " + suma);
+        }
+        else if(rresta.isChecked()){
+            int suma = Integer.parseInt(n1.getText().toString()) - Integer.parseInt(n2.getText().toString());
+            resultado.setText("El Resultado es: " + suma);
+        }
+        else if(rmultiplica.isChecked()){
+            int suma = Integer.parseInt(n1.getText().toString()) * Integer.parseInt(n2.getText().toString());
+            resultado.setText("El Resultado es: " + suma);
+        }
+        else if(rdivide.isChecked()){
+	    int valor1 = Integer.parseInt(n1.getText().toString());
+	    int valor2 = Integer.parseInt(n2.getText().toString());
+		if(valor1 > 0 && valor2 > 0){
+			int suma = valor1 / valor2;
+            		resultado.setText("El Resultado es: " + suma);
+		}
+		else{
+			resultado.setText("ERROR! No se puede dividir por 0!");
+		}
+        }
+    }
+
+    public void nextInicio(View v){
+        Intent inicio = new Intent(this, MainActivity.class);
+        startActivity(inicio);
+    }
+}
