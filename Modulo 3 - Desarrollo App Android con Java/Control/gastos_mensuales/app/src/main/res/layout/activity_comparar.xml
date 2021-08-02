@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Comparar">
+
+    <ImageButton
+        android:id="@+id/ibtVolver3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:onClick="homeBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
+    <TextView
+        android:id="@+id/tituloCompara"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="26dp"
+        android:hint="@string/tituloCompara"
+        android:textColorHint="#000000"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/anno1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/mes1"
+        android:layout_width="129dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginEnd="34dp"
+        app:layout_constraintBottom_toBottomOf="@+id/anno1"
+        app:layout_constraintEnd_toStartOf="@+id/anno1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/anno1"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/anno1"
+        android:layout_width="118dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/mes2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mes1"
+        app:layout_constraintTop_toBottomOf="@+id/tituloCompara" />
+
+    <Spinner
+        android:id="@+id/mes2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="511dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/anno2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anno1" />
+
+    <Spinner
+        android:id="@+id/anno2"
+        android:layout_width="117dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="74dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mes2"
+        app:layout_constraintTop_toBottomOf="@+id/anno1" />
+
+    <Button
+        android:id="@+id/btComparar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:hint="@string/btComparar"
+        android:onClick="compararGastos"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anno2" />
+
+    <ListView
+        android:id="@+id/lvMes1"
+        android:layout_width="170dp"
+        android:layout_height="403dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btComparar"
+        app:layout_constraintVertical_bias="0.483" />
+
+    <ListView
+        android:id="@+id/lvMes2"
+        android:layout_width="175dp"
+        android:layout_height="407dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/_dynamic"
+        app:layout_constraintTop_toBottomOf="@+id/btComparar"
+        app:layout_constraintVertical_bias="0.407" />
+</androidx.constraintlayout.widget.ConstraintLayout>

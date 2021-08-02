@@ -1,0 +1,25 @@
+<resources>
+    <!-- Ingresa Gastos -->
+    <string name="app_name">Gastos Mensuales</string>
+    <string name="btIngresaServicio">Nuevo Servicio</string>
+    <string name="etFecha">Ingrese Fecha</string>
+    <string name="etMonto">Ingrese Monto</string>
+    <string name="btGuardar">Guardar</string>
+    <string name="tvTituloAlmacena">Registrar Gastos</string>
+
+    <!-- Crear Servicios -->
+    <string name="tvTituloServicio">Crear Servicio</string>
+    <string name="etServicio">Nombre Servicio</string>
+    <string name="etDescripcion">Descripcion del servicio</string>
+    <string name="btCrearServicio">Crear</string>
+
+    <!-- Home -->
+    <string name="tvTitulo">Registro de Gastos</string>
+    <string name="btGastos">Ingresa tus gastos</string>
+    <string name="btServicios">Revisa tus cuentas registradas</string>
+    <string name="btCompara">Compara tus gastos</string>
+
+    <!-- Comparar -->
+    <string name="tituloCompara">Comparar Gastos</string>
+    <string name="btComparar">Comparar Meses</string>
+</resources>
