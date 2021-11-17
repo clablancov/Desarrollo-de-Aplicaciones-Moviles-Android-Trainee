@@ -1,0 +1,494 @@
+package com.example.gastosmensuales;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+import androidx.annotation.Nullable;
+
+public class Admindb extends SQLiteOpenHelper {
+
+    public Admindb(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL("create table servicios (nombre varchar, descripcion varchar)");
+        db.execSQL("create table registro_gastos (servicio int, fecha date, monto int)");
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+    }
+}
+
+
+package com.example.gastosmensuales;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
+public class Home extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
+    }
+
+    public void goServicios(View v){
+        Intent servicios = new Intent(this, NvoServicio.class);
+        startActivity(servicios);
+    }
+
+    public void goGastos(View v){
+        Intent gastos = new Intent(this, MainActivity.class);
+        startActivity(gastos);
+    }
+
+    public void goCompara(View v){
+        Intent compara = new Intent(this, Comparar.class);
+        startActivity(compara);
+    }
+}
+
+package com.example.gastosmensuales;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.Switch;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+
+public class Comparar extends AppCompatActivity {
+    Spinner mes1, anno1, mes2,anno2;
+    ListView lvmes1, lvmes2;
+
+    ArrayList<registro_gastos> rgastosant = new ArrayList<registro_gastos>();
+    ArrayList<String> listainfoant = new ArrayList<String>();
+    ArrayList<registro_gastos> rgastosact = new ArrayList<registro_gastos>();
+    ArrayList<String> listainfoact = new ArrayList<String>();
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_comparar);
+        mes1 = findViewById(R.id.mes1);
+        anno1 =findViewById(R.id.anno1);
+        mes2 = findViewById(R.id.mes2);
+        anno2 = findViewById(R.id.anno2);
+        ArrayAdapter<CharSequence> admes = ArrayAdapter.createFromResource(this, R.array.meses, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adanno = ArrayAdapter.createFromResource(this, R.array.annos, android.R.layout.simple_spinner_item);
+
+        mes1.setAdapter(admes);
+        mes2.setAdapter(admes);
+        anno1.setAdapter(adanno);
+        anno2.setAdapter(adanno);
+
+        lvmes1 = findViewById(R.id.lvMes1);
+        lvmes2 = findViewById(R.id.lvMes2);
+
+        ArrayAdapter adap1 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listainfoant);
+        lvmes1.setAdapter(adap1);
+        ArrayAdapter adap2 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listainfoact);
+        lvmes2.setAdapter(adap2);
+    }
+
+    public void compararGastos(View v){
+        Admindb conex = new Admindb(this, "Gastos", null, 1);
+        SQLiteDatabase bd = conex.getWritableDatabase();
+
+        int mesini = devuelveMes(mes1.getSelectedItem().toString());
+        int mesfin = devuelveMes(mes2.getSelectedItem().toString());
+        int annoini = 0;
+        int annofin = 0;
+        if(anno1.getSelectedItem().toString() != "Seleccione..."){
+            annoini = Integer.parseInt(anno1.getSelectedItem().toString());
+        }
+        if(anno2.getSelectedItem().toString() != "Seleccione..."){
+            annofin = Integer.parseInt(anno2.getSelectedItem().toString());
+        }
+
+        if(mesini > 0 && mesfin > 0 && annoini > 0 && annofin > 0){
+            registro_gastos serv1 = null;
+            registro_gastos serv2 = null;
+
+            String fechames1ini = annoini+"-"+mesini+"-01";
+            String fechames1fin = annoini+"-"+mesini+"-31";
+
+            String fechames2ini = annofin+"-"+mesfin+"-01";
+            String fechames2fin = annofin+"-"+mesfin+"-31";
+
+            Cursor dataini =bd.rawQuery("Select s.nombre, rg.fecha, rg.monto FROM registro_gastos rg INNER JOIN servicios s ON (s.rowid = rg.servicio) WHERE rg.fecha between '"+ fechames1ini +"' AND '" + fechames1fin+"'", null);
+            while(dataini.moveToNext()){
+                serv1.setServicio(dataini.getString(0));
+                serv1.setFecha(dataini.getString(1));
+                serv1.setMonto(dataini.getInt(2));
+
+                rgastosant.add(serv1);
+            }
+
+            Cursor datafin = bd.rawQuery("Select s.nombre, rg.fecha, rg.monto FROM registro_gastos rg INNER JOIN servicios s ON (s.rowid = rg.servicio) WHERE rg.fecha between '"+ fechames2ini +"' AND '" + fechames2fin+"'", null);
+            while(datafin.moveToNext()){
+                serv2.setServicio(datafin.getString(0));
+                serv2.setFecha(datafin.getString(1));
+                serv2.setMonto(datafin.getInt(2));
+
+                rgastosact.add(serv2);
+            }
+            obtenerListas();
+        }
+        else {
+            Toast.makeText(this,"Debe seleccionar todos los campos", Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+    private void obtenerListas() {
+
+        for(int i = 0; i < rgastosant.size(); i++){
+            listainfoant.add(rgastosant.get(i).getServicio() + ": " + rgastosant.get(i).getMonto() + " (Fecha: " + rgastosant.get(i).getFecha() + ")");
+        }
+
+        for(int i = 0; i < rgastosact.size(); i++){
+            listainfoact.add(rgastosact.get(i).getServicio() + ": " + rgastosact.get(i).getMonto() + " (Fecha: " + rgastosact.get(i).getFecha() + ")");
+        }
+    }
+
+    private int devuelveMes(String mes){
+        int mesNum = 0;
+        switch(mes){
+            case "Enero":
+                mesNum = 1;
+                break;
+            case "Febrero":
+                mesNum = 2;
+                break;
+            case "Marzo":
+                mesNum = 3;
+                break;
+            case "Abril":
+                mesNum = 4;
+                break;
+            case "Mayo":
+                mesNum = 5;
+                break;
+            case "Junio":
+                mesNum = 6;
+                break;
+            case "Julio":
+                mesNum = 7;
+                break;
+            case "Agosto":
+                mesNum = 8;
+                break;
+            case "Septiembre":
+                mesNum = 9;
+                break;
+            case "Octubre":
+                mesNum = 10;
+                break;
+            case "Noviembre":
+                mesNum = 11;
+                break;
+            case "Diciembre":
+                mesNum = 12;
+                break;
+            default:
+                mesNum = 0;
+                break;
+        }
+        return mesNum;
+    }
+
+    public void homeBack(View v){
+        Intent welcomeBack = new Intent(this, Home.class);
+        startActivity(welcomeBack);
+    }
+}
+
+package com.example.gastosmensuales;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.DatePickerDialog;
+import android.content.ContentValues;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+
+public class MainActivity extends AppCompatActivity {
+
+    Spinner servicios;
+    EditText fecha, monto;
+    ArrayList<String> listaServicios;
+    ArrayList<Servicios> ALServicios;
+    int servicioSelected = 0;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        servicios = findViewById(R.id.spServicios);
+
+        fecha = findViewById(R.id.etFecha);
+        monto = findViewById(R.id.etMonto);
+
+        consultarServicios();
+        ArrayAdapter<CharSequence> adaptador = new ArrayAdapter(this, android.R.layout.simple_spinner_item, listaServicios);
+
+        servicios.setAdapter(adaptador);
+
+        servicios.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(position != 0){
+                    servicioSelected = ALServicios.get(position-1).getId();
+                }
+                else{
+                    servicioSelected = 0;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+    }
+
+    public void crearGasto(View v){
+        Admindb conex = new Admindb(this, "Gastos", null, 1);
+        SQLiteDatabase bd = conex.getWritableDatabase();
+
+        String fechaGasto = fecha.getText().toString();
+        int montoGasto = Integer.parseInt(monto.getText().toString());
+
+        if(servicioSelected != 0 && !fechaGasto.isEmpty() && montoGasto > 0){
+            ContentValues crear = new ContentValues();
+            crear.put("servicio", servicioSelected);
+            crear.put("fecha", fechaGasto);
+            crear.put("monto", montoGasto);
+
+            bd.insert("registro_gastos", null, crear);
+            bd.close();
+            fecha.setText("");
+            monto.setText("");
+            servicios.setSelection(0);
+
+            Toast.makeText(this, "Gasto Ingresado correctamente", Toast.LENGTH_LONG).show();
+        }
+        else {
+            Toast.makeText(this, "Debe ingresar todos los campos!", Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+    private void consultarServicios() {
+        Admindb conex = new Admindb(this, "Gastos", null, 1);
+        SQLiteDatabase bd = conex.getReadableDatabase();
+
+        Servicios servicio = null;
+        ALServicios = new ArrayList<Servicios>();
+
+        Cursor cursor = bd.rawQuery("SELECT rowid, nombre FROM servicios", null);
+
+        while(cursor.moveToNext()){
+            servicio = new Servicios();
+            servicio.setId(cursor.getInt(0));
+            servicio.setNombre(cursor.getString(1));
+
+            ALServicios.add(servicio);
+        }
+        obtenerLista();
+    }
+
+    private void obtenerLista() {
+        listaServicios = new ArrayList<String>();
+        listaServicios.add("Seleccione...");
+
+        for(int i = 0; i < ALServicios.size(); i++){
+            listaServicios.add(ALServicios.get(i).getId() + " - " + ALServicios.get(i).getNombre());
+        }
+    }
+
+    public void defineFecha (View v){
+        Calendar now = Calendar.getInstance();
+        int year = now.get(Calendar.YEAR);
+        int month = now.get(Calendar.MONTH);
+        int day = now.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog dialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                fecha.setText(dayOfMonth + "-" + (month+1) + "-" + year);
+            }
+        }, year, month, day);
+        dialog.show();
+    }
+
+    public void nuevoServicio(View v){
+        Intent nvoServicio = new Intent(this, NvoServicio.class);
+        startActivity(nvoServicio);
+    }
+
+    public void homeBack(View v){
+        Intent welcomeBack = new Intent(this, Home.class);
+        startActivity(welcomeBack);
+    }
+}
+
+package com.example.gastosmensuales;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.ContentValues;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class NvoServicio extends AppCompatActivity {
+
+    EditText nombre, descripcion;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_nvo_servicio);
+        nombre = findViewById(R.id.etServicio);
+        descripcion = findViewById(R.id.etDescripcion);
+    }
+
+    public void crearServicio(View v){
+        Admindb conex = new Admindb(this, "Gastos", null, 1);
+        SQLiteDatabase bd = conex.getWritableDatabase();
+
+        String nombre_servicio = nombre.getText().toString();
+        String desc_servicio = descripcion.getText().toString();
+
+        if(!nombre_servicio.isEmpty() && !desc_servicio.isEmpty()){
+            ContentValues crear = new ContentValues();
+            crear.put("nombre", nombre_servicio);
+            crear.put("descripcion", desc_servicio);
+
+            bd.insert("servicios", null, crear);
+            bd.close();
+            nombre.setText("");
+            descripcion.setText("");
+            Toast.makeText(this, "Servicio creado", Toast.LENGTH_LONG).show();
+        }
+        else{
+            Toast.makeText(this, "Ingrese todos los campos, son obligatorios", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void homeBack(View v){
+        Intent welcomeBack = new Intent(this, Home.class);
+        startActivity(welcomeBack);
+    }
+
+}
+
+package com.example.gastosmensuales;
+
+public class registro_gastos {
+    private String servicio, fecha;
+    private int monto;
+
+    public registro_gastos(String servicio, String fecha, int monto) {
+        this.servicio = servicio;
+        this.fecha = fecha;
+        this.monto = monto;
+    }
+
+    public String getServicio() {
+        return servicio;
+    }
+
+    public void setServicio(String servicio) {
+        this.servicio = servicio;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public int getMonto() {
+        return monto;
+    }
+
+    public void setMonto(int monto) {
+        this.monto = monto;
+    }
+}
+
+package com.example.gastosmensuales;
+
+public class Servicios {
+    private int id;
+    private String nombre, descripcion;
+
+    public Servicios(){
+
+    }
+    public Servicios(int id, String nombre, String descripcion){
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+}

@@ -1,0 +1,2 @@
+rootProject.name = "conexDB"
+include ':app'

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">DbActivitys</string>
+    <string name="btConsultar">Buscar</string>
+    <string name="btInsertar">Crear</string>
+    <string name="btModificar">Modificar</string>
+    <string name="btEliminar">Eliminar</string>
+    <string name="tvBuscar">Buscar Producto</string>
+    <string name="tvModificar">Modificar Producto</string>
+    <string name="tvInsertar">Insertar Producto</string>
+    <string name="tvEliminar">Eliminar Producto</string>
+    <string name="etBuscar">Ingresar Codigo Producto</string>
+    <string name="etNombre">Ingresar Nombre Producto</string>
+    <string name="etPrecio">Ingresar Precio Producto</string>
+    <string name="btBuscar">Buscar</string>
+</resources>

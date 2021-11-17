@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">conexDB</string>
+    <string name="codigoProducto">Ingrese Codigo</string>
+    <string name="nombreProducto">Ingrese Nombre</string>
+    <string name="precioProducto">Ingrese Precio</string>
+    <string name="btCrear">Crear</string>
+    <string name="btModificar">Modificar</string>
+    <string name="btBuscar">Buscar</string>
+    <string name="btEliminar">Eliminar</string>
+</resources>
